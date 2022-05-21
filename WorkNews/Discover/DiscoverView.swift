@@ -8,19 +8,53 @@
 import SwiftUI
 
 struct DiscoverView: View {
+    
+    @StateObject var bookVM = BooksViewModel()
+    
     var body: some View {
         List {
-            Section(header: Text("Books")) {
-                DiscoverBooksScrollView()
+            Section {
+                DiscoverBooksScrollView(model: bookVM)
+            } header: {
+                DiscoverSectionHeaderView(
+                    model: bookVM,
+                    navigationAction: {
+                        bookVM.googleBookFetcher.tryToFetchAllBooks()
+                    },
+                    title: "Books")
             }
-            Section(header: Text("Movies")) {
+            
+            Section {
                 DiscoverMoviesScrollView()
+            } header: {
+                DiscoverSectionHeaderView(
+                    model: bookVM,
+                    navigationAction: {
+                        print("place holder")
+                    },
+                    title: "Movies")
             }
-            Section(header: Text("Music")) {
+
+            Section {
                 DiscoverMusicScrollView()
+            } header: {
+                DiscoverSectionHeaderView(
+                    model: bookVM,
+                    navigationAction: {
+                        print("place holder")
+                    },
+                    title: "Music")
             }
-            Section(header: Text("Magazines")) {
+
+            Section {
                 DiscoverMagazinesScrollView()
+            } header: {
+                DiscoverSectionHeaderView(
+                    model: bookVM,
+                    navigationAction: {
+                        print("place holder")
+                    },
+                    title: "Magazines")
             }
         }
     }

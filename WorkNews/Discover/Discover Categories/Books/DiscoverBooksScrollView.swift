@@ -9,12 +9,12 @@ import SwiftUI
 
 struct DiscoverBooksScrollView: View {
     
-    @StateObject var model = BooksViewModel()
+    @ObservedObject var model: BooksViewModel
         
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(model.publishedBooks) { book in
+                ForEach(model.publishedDiscoverList) { book in
                     BookCard(book: book)
                         .padding(EdgeInsets(
                             top: 10,
@@ -27,8 +27,17 @@ struct DiscoverBooksScrollView: View {
     }
 }
 
+// MARK: - Preview
 struct DiscoverBooksScrollView_Previews: PreviewProvider {
+    
+    struct DiscoverBooksScrollViewPreview: View {
+        @ObservedObject var model = BooksViewModel()
+        
+        var body: some View {
+            DiscoverBooksScrollView(model: model)
+        }
+    }
     static var previews: some View {
-        DiscoverBooksScrollView()
+        DiscoverBooksScrollViewPreview()
     }
 }

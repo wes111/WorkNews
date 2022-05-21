@@ -18,8 +18,8 @@ struct BookCard: View {
     }
 }
 
-//struct BookCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BookCard(book: Book(image: Image(systemName: "book.closed.fill")))
-//    }
-//}
+struct BookCard_Previews: PreviewProvider {
+    static var previews: some View {
+        BookCard(book: Book(GoogleBook(volumeInfo: GoogleBook.VolumeInfo(title: "The Dispossessed", subtitle: "An Ambiguous Dystopia", authors: ["Ursula K. Le Guin"], publishedDate: "1969", description: "An award-winning book", industryIdentifiers: nil, infoLink: nil, imageLinks: nil))))
+    }
+}

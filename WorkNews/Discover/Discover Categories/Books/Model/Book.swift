@@ -28,7 +28,7 @@ struct Book: Identifiable {
         self.publishedDate = googleBook.volumeInfo.publishedDate ?? "Published Date Unavailable"
         self.infoLink = googleBook.volumeInfo.infoLink
         self.imageLink = Book.getImageLink(from: googleBook.volumeInfo.imageLinks?.thumbnail)
-        self.asyncImage = AsyncImageView(link: imageLink, style: .book)
+        self.asyncImage = AsyncImageView(link: imageLink, style: .book, tryAgain: true)
     }
     
     // The image link provided by the Google Books API is not secure, i.e. the

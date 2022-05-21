@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// Response model for an array of Google Books.
 struct GoogleBooksResponseModel: Decodable {
     let items: [GoogleBook]
 }

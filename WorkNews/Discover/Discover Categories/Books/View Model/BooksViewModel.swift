@@ -9,25 +9,41 @@ import Foundation
 import Combine
 
 class BooksViewModel: ObservableObject {
-    @Published var publishedBooks: [Book] = []
-    private let googleBookFetcher = GoogleBookFetcher()
+    @Published var publishedFullList: [Book] = []
+    @Published var publishedDiscoverList: [Book] = []
+    @Published var bookCount: Int?
+    
     private var subscriptions = Set<AnyCancellable>()
     
+    let googleBookFetcher = GoogleBookFetcher()
+    
     init() {
-        receiveEvents()
+        subscribeToBooks()
+        subscribeToBookCount()
     }
     
     // Subscribe to books from the googleBookFetcher.
-    func receiveEvents() {
-        googleBookFetcher.getGoogleBooks()
-            .sink { model in
-                self.createSeatGeekEvents(from: model)
+    private func subscribeToBooks() {
+        googleBookFetcher.getGoogleBooksPublisher()
+            .sink { googleBooksResponseModel in
+                self.createBooks(from: googleBooksResponseModel)
+            }
+            .store(in: &subscriptions)
+    }
+    
+    // Subscribe to book count from the googleBookFetcher.
+    private func subscribeToBookCount() {
+        googleBookFetcher.getGoogleBookCountPublisher()
+            .sink { bookCount in
+                DispatchQueue.main.async {
+                    self.bookCount = bookCount
+                }
             }
             .store(in: &subscriptions)
     }
     
     // Create the published model from the responseModel.
-    func createSeatGeekEvents(from model: GoogleBooksResponseModel?) {
+    private func createBooks(from model: GoogleBooksResponseModel?) {
         var books: [Book] = []
         if let googleBookArray = model?.items {
             for googleBook in googleBookArray {
@@ -36,7 +52,10 @@ class BooksViewModel: ObservableObject {
             }
         }
         DispatchQueue.main.async {
-            self.publishedBooks = books
+            if self.publishedDiscoverList.isEmpty {
+                self.publishedDiscoverList += books
+            }
+            self.publishedFullList += books
         }
     }
     
