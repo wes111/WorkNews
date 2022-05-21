@@ -9,46 +9,27 @@ import SwiftUI
 
 struct BooksListView: View {
     
-    @ObservedObject var model: BooksViewModel
-
-    
+    @Binding var bookList: [Book]
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             HStack(alignment: .top) {
-                VStack {
-                    ForEach(0..<model.publishedFullList.count.getThird(position: 1), id:\.self) { index in
-                        BookCard(book: model.publishedFullList[index])
-                            .padding(EdgeInsets(
-                                top: 10,
-                                leading: 10,
-                                bottom: 10,
-                                trailing: 0))
-                    }
-                }
-                VStack {
-                    ForEach(model.publishedFullList.count.getThird(position: 1)..<model.publishedFullList.count.getThird(position: 2),
-                            id:\.self) { index in
-                        BookCard(book: model.publishedFullList[index])
-                            .padding(EdgeInsets(
-                                top: 10,
-                                leading: 10,
-                                bottom: 10,
-                                trailing: 0))
-                    }
-                }
-                
-                VStack {
-                    ForEach(model.publishedFullList.count.getThird(position: 2)..<model.publishedFullList.count,
-                            id:\.self) { index in
-                        BookCard(book: model.publishedFullList[index])
-                            .padding(EdgeInsets(
-                                top: 10,
-                                leading: 10,
-                                bottom: 10,
-                                trailing: 0))
-                    }
-                }
+                createBookColumn(startIndex: 0, endIndex: bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 1))
+                createBookColumn(startIndex: bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 1), endIndex: bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 2))
+                createBookColumn(startIndex: bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 2), endIndex: bookList.count)
+            }
+        }
+    }
+    
+    func createBookColumn(startIndex: Int, endIndex: Int) -> some View {
+        VStack {
+            ForEach(startIndex..<endIndex, id:\.self) { index in
+                BookCard(book: bookList[index])
+                    .padding(EdgeInsets(
+                        top: 10,
+                        leading: 10,
+                        bottom: 10,
+                        trailing: 0))
             }
         }
     }
@@ -58,10 +39,10 @@ struct BooksListView: View {
 struct BooksListView_Previews: PreviewProvider {
     
     struct BooksListViewPreview: View {
-        @ObservedObject var model = BooksViewModel()
+        @State var bookList = [Book(GoogleBook(volumeInfo: GoogleBook.VolumeInfo(title: "The Dispossessed", subtitle: "An Ambiguous Dystopia", authors: ["Ursula K. Le Guin"], publishedDate: "1969", description: "An award-winning book", industryIdentifiers: nil, infoLink: nil, imageLinks: nil)))]
         
         var body: some View {
-            BooksListView(model: model)
+            BooksListView(bookList: $bookList)
         }
     }
     
