@@ -14,8 +14,8 @@ struct DiscoverBooksScrollView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(model.publishedDiscoverList) { book in
-                    BookCard(book: book)
+                ForEach($model.discoverBookList) { $book in
+                    BookCard(book: $book, fetcher: model.googleBookFetcher)
                         .padding(EdgeInsets(
                             top: 10,
                             leading: 10,

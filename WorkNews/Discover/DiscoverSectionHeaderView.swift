@@ -21,7 +21,7 @@ struct DiscoverSectionHeaderView: View {
             Text(title)
                 .font(.title2)
             Spacer()
-            NavigationLink(destination: BooksListView(bookList: $model.publishedFullList)) {
+            NavigationLink(destination: BooksListView(model: model)) {
                 Image(systemName: "arrow.forward")
                     .modify(using: .systemForward)
             }

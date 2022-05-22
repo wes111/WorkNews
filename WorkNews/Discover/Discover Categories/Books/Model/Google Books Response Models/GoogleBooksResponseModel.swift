@@ -13,6 +13,7 @@ struct GoogleBooksResponseModel: Decodable {
 }
 
 struct GoogleBook: Decodable {
+    let id: String
     let volumeInfo: VolumeInfo
     
     struct VolumeInfo: Decodable {

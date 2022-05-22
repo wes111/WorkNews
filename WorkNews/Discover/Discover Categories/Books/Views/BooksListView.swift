@@ -5,18 +5,19 @@
 //  Created by Wesley Luntsford on 5/19/22.
 //
 
+import OrderedCollections
 import SwiftUI
 
 struct BooksListView: View {
     
-    @Binding var bookList: [Book]
+    @ObservedObject var model: BooksViewModel
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             HStack(alignment: .top) {
-                createBookColumn(startIndex: 0, endIndex: bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 1))
-                createBookColumn(startIndex: bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 1), endIndex: bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 2))
-                createBookColumn(startIndex: bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 2), endIndex: bookList.count)
+                createBookColumn(startIndex: 0, endIndex: model.bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 1))
+                createBookColumn(startIndex: model.bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 1), endIndex: model.bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 2))
+                createBookColumn(startIndex: model.bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 2), endIndex: model.bookList.count)
             }
         }
     }
@@ -24,7 +25,7 @@ struct BooksListView: View {
     func createBookColumn(startIndex: Int, endIndex: Int) -> some View {
         VStack {
             ForEach(startIndex..<endIndex, id:\.self) { index in
-                BookCard(book: bookList[index])
+                BookCard(book: $model.bookList[index], fetcher: model.googleBookFetcher)
                     .padding(EdgeInsets(
                         top: 10,
                         leading: 10,
@@ -39,10 +40,11 @@ struct BooksListView: View {
 struct BooksListView_Previews: PreviewProvider {
     
     struct BooksListViewPreview: View {
-        @State var bookList = [Book(GoogleBook(volumeInfo: GoogleBook.VolumeInfo(title: "The Dispossessed", subtitle: "An Ambiguous Dystopia", authors: ["Ursula K. Le Guin"], publishedDate: "1969", description: "An award-winning book", industryIdentifiers: nil, infoLink: nil, imageLinks: nil)))]
+        @State var bookList: OrderedDictionary<String, Book> = [:]
+        @State var model = BooksViewModel()
         
         var body: some View {
-            BooksListView(bookList: $bookList)
+            BooksListView(model: model)
         }
     }
     

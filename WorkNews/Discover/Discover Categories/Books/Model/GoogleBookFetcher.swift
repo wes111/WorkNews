@@ -12,12 +12,15 @@ struct GoogleAPI {
     static let bookshelfID = "1001"
     static let userID = "103818017356926243835"
     static let key = "AIzaSyD3ycl7G_X7ZJIm3pD6nFLz8ZgMPjbGupc"
-    static let baseURL = "https://www.googleapis.com/books/v1/users/"
+    static let baseURLWithUser = "\(GoogleAPI.baseURL)users/"
+    static let baseURL = "https://www.googleapis.com/books/v1/"
     static let defaultBooksPerFetch = 10
     
-    static let requestGoogleBooksURL = "\(GoogleAPI.baseURL)\(GoogleAPI.userID)/bookshelves/\(GoogleAPI.bookshelfID)/volumes?key=\(GoogleAPI.key)&startIndex="
+    static let requestGoogleBooksURL = "\(GoogleAPI.baseURLWithUser)\(GoogleAPI.userID)/bookshelves/\(GoogleAPI.bookshelfID)/volumes?key=\(GoogleAPI.key)&startIndex="
     
-    static let requestGoogleBookCount = "\(GoogleAPI.baseURL)\(GoogleAPI.userID)/bookshelves/\(GoogleAPI.bookshelfID)?key=\(GoogleAPI.key)"
+    static let requestGoogleBookCountURL = "\(GoogleAPI.baseURLWithUser)\(GoogleAPI.userID)/bookshelves/\(GoogleAPI.bookshelfID)?key=\(GoogleAPI.key)"
+    
+    static let requestGoogleVolumeURL = "\(GoogleAPI.baseURL)volumes/"
 }
 
 class GoogleBookFetcher {
@@ -30,6 +33,8 @@ class GoogleBookFetcher {
     private let googleBooksSubject = CurrentValueSubject<GoogleBooksResponseModel?, Never>(nil)
     private let googleBookCountSubject = CurrentValueSubject<Int?, Never>(nil)
     
+    private let googleBookUpdateSubject = PassthroughSubject<GoogleBook?, Never>()
+    
     private var fetchedBookCount = 0
     //private var totalBooks: Int?
     private let shouldFetchAllBooks = false
@@ -37,6 +42,18 @@ class GoogleBookFetcher {
     init() {
         requestGoogleBookCount()
         requestGoogleBooks(startingAt: 0)
+    }
+    
+    func updateGoogleBook(id: String) {
+        makeRequest(using: GoogleAPI.requestGoogleVolumeURL + id) { [weak self] data in
+            do {
+                let googleBook = try self?.decoder
+                    .decode(GoogleBook.self, from: data)
+                self?.googleBookUpdateSubject.send(googleBook)
+            } catch {
+                print(error)
+            }
+        }
     }
     
     func tryToFetchAllBooks(){
@@ -64,7 +81,7 @@ class GoogleBookFetcher {
     }
     
     private func requestGoogleBookCount() {
-        makeRequest(using: GoogleAPI.requestGoogleBookCount) { [weak self] data in
+        makeRequest(using: GoogleAPI.requestGoogleBookCountURL) { [weak self] data in
             do {
                 let googleBookCountData = try self?.decoder
                     .decode(GoogleBookShelfResponseModel.self, from: data)
@@ -81,6 +98,10 @@ class GoogleBookFetcher {
     
     func getGoogleBookCountPublisher() -> AnyPublisher<Int?, Never> {
         return googleBookCountSubject.eraseToAnyPublisher()
+    }
+    
+    func getGoogleBookUpdatePublisher() -> AnyPublisher<GoogleBook?, Never> {
+        return googleBookUpdateSubject.eraseToAnyPublisher()
     }
     
     private func makeRequest(using urlString: String, handleData: @escaping (Data) -> ()) {

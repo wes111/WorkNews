@@ -18,7 +18,7 @@ extension Int {
             return 0
         } else {
             if self % 3 < division {
-                return self / 3 + getEndIndexWhenDividedIntoThirds(forDivision: division - 1)
+                return (self / 3) + getEndIndexWhenDividedIntoThirds(forDivision: division - 1)
             } else {
                 return (self / 3) + 1 + getEndIndexWhenDividedIntoThirds(forDivision: division - 1)
             }

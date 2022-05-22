@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct Book: Identifiable {
-    let id = UUID()
+    let id: String
     
     let title: String
     let authors: String
@@ -19,15 +19,22 @@ struct Book: Identifiable {
     let imageLink: String?
     let asyncImage: AsyncImageView
     
-    init(_ googleBook: GoogleBook) {
+    init(_ googleBook: GoogleBook, shouldStripHTML: Bool) {
+        self.id = googleBook.id
         self.title = Book.createBookTitle(from: googleBook)
         self.authors = googleBook.volumeInfo.authors?.joined(separator: ", ") ?? "Author Unavailable"
-        self.description = googleBook.volumeInfo.description ?? "Description Unavailable"
+        self.description = Book.createDescription(googleBook, shouldStripHTML: shouldStripHTML) ?? "Description Unavailable"
         self.publishedDate = Book.createPublishedDate(from: googleBook.volumeInfo.publishedDate)
         self.infoLink = googleBook.volumeInfo.infoLink
         self.imageLink = Book.getImageLink(from: googleBook.volumeInfo.imageLinks?.thumbnail)
         self.asyncImage = AsyncImageView(link: imageLink, style: .bookCard, tryAgain: true)
     }
+    
+    static func createDescription(_ googleBook: GoogleBook, shouldStripHTML: Bool) -> String? {
+        let description = googleBook.volumeInfo.description
+        return shouldStripHTML ? description?.stripOutHtml() : description
+    }
+    
     
     static func createBookTitle(from googleBook: GoogleBook) -> String {
         guard let title = googleBook.volumeInfo.title, title != "" else {

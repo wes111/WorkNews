@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 class BooksViewModel: ObservableObject {
-    @Published var publishedFullList: [Book] = []
-    @Published var publishedDiscoverList: [Book] = []
+    @Published var bookList: [Book] = []
+    @Published var discoverBookList: [Book] = []
     @Published var bookCount: Int?
     
     private var subscriptions = Set<AnyCancellable>()
@@ -20,6 +20,7 @@ class BooksViewModel: ObservableObject {
     init() {
         subscribeToBooks()
         subscribeToBookCount()
+        subscribeToBookUpdates()
     }
     
     // Subscribe to books from the googleBookFetcher.
@@ -27,6 +28,14 @@ class BooksViewModel: ObservableObject {
         googleBookFetcher.getGoogleBooksPublisher()
             .sink { googleBooksResponseModel in
                 self.createBooks(from: googleBooksResponseModel)
+            }
+            .store(in: &subscriptions)
+    }
+    
+    private func subscribeToBookUpdates() {
+        googleBookFetcher.getGoogleBookUpdatePublisher()
+            .sink { googleBook in
+                self.updateBook(from: googleBook)
             }
             .store(in: &subscriptions)
     }
@@ -44,19 +53,32 @@ class BooksViewModel: ObservableObject {
     
     // Create the published model from the responseModel.
     private func createBooks(from model: GoogleBooksResponseModel?) {
-        var books: [Book] = []
         if let googleBookArray = model?.items {
             for googleBook in googleBookArray {
-                let book = Book(googleBook)
-                books.append(book)
+                let book = Book(googleBook, shouldStripHTML: false)
+                DispatchQueue.main.async {
+                    if self.discoverBookList.count < 10 {
+                        self.discoverBookList.append(book)
+                    }
+                    self.bookList.append(book)
+                }
             }
-        }
-        DispatchQueue.main.async {
-            if self.publishedDiscoverList.isEmpty {
-                self.publishedDiscoverList += books
-            }
-            self.publishedFullList += books
         }
     }
     
+    private func updateBook(from googleBook: GoogleBook?) {
+        guard let googleBook = googleBook else {
+            // error
+            return
+        }
+        let updatedBook = Book(googleBook, shouldStripHTML: true)
+        for (index, book) in bookList.enumerated() {
+            if book.id == updatedBook.id {
+                DispatchQueue.main.async {
+                    self.bookList[index] = updatedBook
+                    //self.discoverBookList[index] = updatedBook
+                }
+            }
+        }
+    }
 }
