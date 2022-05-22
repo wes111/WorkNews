@@ -12,8 +12,10 @@ struct BookCard: View {
     let book: Book
         
     var body: some View {
-        VStack {
-            book.asyncImage
+        NavigationLink(destination: BookDetailView(book: book)) {
+            VStack {
+                book.asyncImage
+            }
         }
     }
 }

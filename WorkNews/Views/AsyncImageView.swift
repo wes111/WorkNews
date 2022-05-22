@@ -8,13 +8,16 @@
 import SwiftUI
 
 enum ImageStyle {
-    case book
+    case bookCard
+    case bookDetail
     case systemForward
     
     var size: CGSize {
         switch self {
-        case .book:
+        case .bookCard:
             return CGSize(width: 98, height: 154)
+        case .bookDetail:
+            return CGSize(width: 196, height: 308)
         case .systemForward: // 36 x 30
             return CGSize(width: 18, height: 15)
         }
@@ -62,6 +65,6 @@ struct AsyncImageView: View {
 
 struct AsyncImageView_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncImageView(link: nil, style: .book, tryAgain: false)
+        AsyncImageView(link: nil, style: .bookCard, tryAgain: false)
     }
 }
