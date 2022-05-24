@@ -14,24 +14,18 @@ struct BookDetailView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 20) {
-                VStack {
-                    AsyncImageView(link: book.imageLink, style: .bookDetail, tryAgain: true)
-                        .padding()
-                    
-                    Text(book.title)
-                        .font(.title2)
-                        .padding(.bottom, 5)
-                    Text("By: \(book.authors)")
-                        .padding(.bottom, 5)
-                    Text(book.publishedDate)
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .modifier(Neumorphic())
                 
+                BookTitleView(book: book)
+                BookDescriptionView(book: book)
                 
                 VStack {
-                    Text(book.description)
+                    Text("Additional Details")
+                        .font(.title3)
+                    Text("ISBN-10: \(book.isbn10)")
+                    Text("ISBN-13: \(book.isbn13)")
+                    Link(destination: book.infoLink) {
+                        Text("Tap for more info")
+                    }
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
@@ -41,12 +35,9 @@ struct BookDetailView: View {
             }
             .fixedSize(horizontal: false, vertical: true)
             .multilineTextAlignment(.center)
-            
             .padding()
-            
         }
-        }
-        
+    }
 }
 
 struct BookDetailView_Previews: PreviewProvider {

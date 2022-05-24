@@ -9,25 +9,24 @@ import Combine
 import Foundation
 
 struct GoogleAPI {
-    static let bookshelfID = "1001"
-    static let userID = "103818017356926243835"
-    static let key = "AIzaSyD3ycl7G_X7ZJIm3pD6nFLz8ZgMPjbGupc"
-    static let baseURLWithUser = "\(GoogleAPI.baseURL)users/"
-    static let baseURL = "https://www.googleapis.com/books/v1/"
-    static let defaultBooksPerFetch = 10
+    private let bookshelfID = "1001"
+    private let userID = "103818017356926243835"
+    private let key = "AIzaSyD3ycl7G_X7ZJIm3pD6nFLz8ZgMPjbGupc"
+    private let baseURL = "https://www.googleapis.com/books/v1/"
+    private var baseURLWithUser: String { "\(baseURL)users/" }
     
-    static let requestGoogleBooksURL = "\(GoogleAPI.baseURLWithUser)\(GoogleAPI.userID)/bookshelves/\(GoogleAPI.bookshelfID)/volumes?key=\(GoogleAPI.key)&startIndex="
+    let defaultBooksPerFetch = 10
+    var requestGoogleBooksURL: String { "\(baseURLWithUser)\(userID)/bookshelves/\(bookshelfID)/volumes?key=\(key)&startIndex=" }
     
-    static let requestGoogleBookCountURL = "\(GoogleAPI.baseURLWithUser)\(GoogleAPI.userID)/bookshelves/\(GoogleAPI.bookshelfID)?key=\(GoogleAPI.key)"
+    var requestGoogleBookCountURL: String { "\(baseURLWithUser)\(userID)/bookshelves/\(bookshelfID)?key=\(key)" }
     
-    static let requestGoogleVolumeURL = "\(GoogleAPI.baseURL)volumes/"
+    var requestGoogleVolumeURL: String { "\(baseURL)volumes/" }
 }
 
 class GoogleBookFetcher {
-    
-    
 
     private let decoder = JSONDecoder()
+    private let api = GoogleAPI()
     
     // This could have an initial value provided from local storage.
     private let googleBooksSubject = CurrentValueSubject<GoogleBooksResponseModel?, Never>(nil)
@@ -45,7 +44,7 @@ class GoogleBookFetcher {
     }
     
     func updateGoogleBook(id: String) {
-        makeRequest(using: GoogleAPI.requestGoogleVolumeURL + id) { [weak self] data in
+        makeRequest(using: api.requestGoogleVolumeURL + id) { [weak self] data in
             do {
                 let googleBook = try self?.decoder
                     .decode(GoogleBook.self, from: data)
@@ -68,7 +67,7 @@ class GoogleBookFetcher {
     }
     
     private func requestGoogleBooks(startingAt index: Int) {
-        makeRequest(using: GoogleAPI.requestGoogleBooksURL + String(index)) { [weak self] data in
+        makeRequest(using: api.requestGoogleBooksURL + String(index)) { [weak self] data in
             do {
                 let googleBooksData = try self?.decoder
                     .decode(GoogleBooksResponseModel.self, from: data)
@@ -77,11 +76,11 @@ class GoogleBookFetcher {
                 print(error)
             }
         }
-        fetchedBookCount += GoogleAPI.defaultBooksPerFetch
+        fetchedBookCount += api.defaultBooksPerFetch
     }
     
     private func requestGoogleBookCount() {
-        makeRequest(using: GoogleAPI.requestGoogleBookCountURL) { [weak self] data in
+        makeRequest(using: api.requestGoogleBookCountURL) { [weak self] data in
             do {
                 let googleBookCountData = try self?.decoder
                     .decode(GoogleBookShelfResponseModel.self, from: data)

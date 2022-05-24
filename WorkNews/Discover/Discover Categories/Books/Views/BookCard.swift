@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BookCard: View {
     
+    @State var hasUpdatedBook = false
     @Binding var book: Book
     let fetcher: GoogleBookFetcher
         
@@ -19,7 +20,9 @@ struct BookCard: View {
             }
         }
         .simultaneousGesture(TapGesture().onEnded{
-            self.fetcher.updateGoogleBook(id: book.id)
+            if !book.hasReceivedUpdatedInfo {
+                self.fetcher.updateGoogleBook(id: book.id)
+            }
         })
     }
 }

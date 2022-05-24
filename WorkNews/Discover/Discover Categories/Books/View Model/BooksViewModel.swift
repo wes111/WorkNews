@@ -76,7 +76,7 @@ class BooksViewModel: ObservableObject {
             if book.id == updatedBook.id {
                 DispatchQueue.main.async {
                     self.bookList[index] = updatedBook
-                    //self.discoverBookList[index] = updatedBook
+                    self.bookList[index].hasReceivedUpdatedInfo = true
                 }
             }
         }

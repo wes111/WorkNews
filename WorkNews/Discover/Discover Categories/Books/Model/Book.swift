@@ -15,9 +15,12 @@ struct Book: Identifiable {
     let authors: String
     let description: String
     let publishedDate: String
-    let infoLink: String?
+    let infoLink: URL
     let imageLink: String?
     let asyncImage: AsyncImageView
+    var isbn10: String
+    let isbn13: String
+    var hasReceivedUpdatedInfo = false
     
     init(_ googleBook: GoogleBook, shouldStripHTML: Bool) {
         self.id = googleBook.id
@@ -25,9 +28,19 @@ struct Book: Identifiable {
         self.authors = googleBook.volumeInfo.authors?.joined(separator: ", ") ?? "Author Unavailable"
         self.description = Book.createDescription(googleBook, shouldStripHTML: shouldStripHTML) ?? "Description Unavailable"
         self.publishedDate = Book.createPublishedDate(from: googleBook.volumeInfo.publishedDate)
-        self.infoLink = googleBook.volumeInfo.infoLink
+        self.infoLink = URL(string: googleBook.volumeInfo.infoLink ?? "https://www.google.com")!
         self.imageLink = Book.getImageLink(from: googleBook.volumeInfo.imageLinks?.thumbnail)
         self.asyncImage = AsyncImageView(link: imageLink, style: .bookCard, tryAgain: true)
+        self.isbn10 = Book.createISBN(googleBook, isbnIndex: 0) ?? "ISBN-10 Unavailable"
+        self.isbn13 = Book.createISBN(googleBook, isbnIndex: 1) ?? "ISBN-13 Unavailable"
+    }
+    
+    static func createISBN(_ googleBook: GoogleBook, isbnIndex index: Int) -> String? {
+        if googleBook.volumeInfo.industryIdentifiers?.count ?? 0 > index {
+            return googleBook.volumeInfo.industryIdentifiers?[index].identifier
+        } else {
+            return nil
+        }
     }
     
     static func createDescription(_ googleBook: GoogleBook, shouldStripHTML: Bool) -> String? {
