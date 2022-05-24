@@ -10,7 +10,7 @@ import SwiftUI
 struct BookCard: View {
     
     @State var hasUpdatedBook = false
-    @Binding var book: Book
+    let book: Book
     let fetcher: GoogleBookFetcher
         
     var body: some View {

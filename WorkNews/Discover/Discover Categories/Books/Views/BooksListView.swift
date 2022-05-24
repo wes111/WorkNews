@@ -25,7 +25,7 @@ struct BooksListView: View {
     func createBookColumn(startIndex: Int, endIndex: Int) -> some View {
         VStack {
             ForEach(startIndex..<endIndex, id:\.self) { index in
-                BookCard(book: $model.bookList[index], fetcher: model.googleBookFetcher)
+                BookCard(book: model.bookList.elements[index].value, fetcher: model.googleBookFetcher)
                     .padding(EdgeInsets(
                         top: 10,
                         leading: 10,

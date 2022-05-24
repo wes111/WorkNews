@@ -7,9 +7,11 @@
 
 import Foundation
 import Combine
+import OrderedCollections
 
 class BooksViewModel: ObservableObject {
-    @Published var bookList: [Book] = []
+    @Published var bookList: OrderedDictionary<String, Book> = [:]
+
     @Published var discoverBookList: [Book] = []
     @Published var bookCount: Int?
     
@@ -60,7 +62,7 @@ class BooksViewModel: ObservableObject {
                     if self.discoverBookList.count < 10 {
                         self.discoverBookList.append(book)
                     }
-                    self.bookList.append(book)
+                    self.bookList[book.id] = book
                 }
             }
         }
@@ -72,13 +74,8 @@ class BooksViewModel: ObservableObject {
             return
         }
         let updatedBook = Book(googleBook, shouldStripHTML: true)
-        for (index, book) in bookList.enumerated() {
-            if book.id == updatedBook.id {
-                DispatchQueue.main.async {
-                    self.bookList[index] = updatedBook
-                    self.bookList[index].hasReceivedUpdatedInfo = true
-                }
-            }
+        DispatchQueue.main.async {
+            self.bookList[updatedBook.id] = updatedBook
         }
     }
 }
