@@ -43,7 +43,7 @@ class GoogleBookFetcher {
         requestGoogleBooks(startingAt: 0)
     }
     
-    func updateGoogleBook(id: String) {
+    func getAdditionalBookDetails(id: String) {
         makeRequest(using: api.requestGoogleVolumeURL + id) { [weak self] data in
             do {
                 let googleBook = try self?.decoder

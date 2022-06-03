@@ -73,7 +73,8 @@ class BooksViewModel: ObservableObject {
             // error
             return
         }
-        let updatedBook = Book(googleBook, shouldStripHTML: true)
+        var updatedBook = Book(googleBook, shouldStripHTML: true)
+        updatedBook.hasReceivedUpdatedInfo = true
         DispatchQueue.main.async {
             self.bookList[updatedBook.id] = updatedBook
         }

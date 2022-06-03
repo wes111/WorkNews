@@ -9,21 +9,13 @@ import SwiftUI
 
 struct BookCard: View {
     
-    @State var hasUpdatedBook = false
-    let book: Book
+    var book: Book
     let fetcher: GoogleBookFetcher
-        
+    
     var body: some View {
-        NavigationLink(destination: BookDetailView(book: book)) {
-            VStack {
-                book.asyncImage
-            }
+        NavigationLink(destination: BookDetailView(book: book, fetcher: fetcher)) {
+            book.asyncImage
         }
-        .simultaneousGesture(TapGesture().onEnded{
-            if !book.hasReceivedUpdatedInfo {
-                self.fetcher.updateGoogleBook(id: book.id)
-            }
-        })
     }
 }
 

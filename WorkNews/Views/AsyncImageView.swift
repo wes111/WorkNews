@@ -15,7 +15,7 @@ enum ImageStyle {
     var size: CGSize {
         switch self {
         case .bookCard:
-            return CGSize(width: 98, height: 154)
+            return CGSize(width: BookConstants.bookCardWidth, height: 154)
         case .bookDetail:
             return CGSize(width: 196, height: 308)
         case .systemForward: // 36 x 30

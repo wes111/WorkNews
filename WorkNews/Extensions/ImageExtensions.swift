@@ -13,10 +13,8 @@ extension Image {
         return self
             .resizable()
             .scaledToFill()
-            .frame(width: style.size.width,
-                   height: style.size.height)
+            .frame(width: style.size.width, height: style.size.height)
             .clipped()
-            //.cornerRadius(5)
     }
 }
 

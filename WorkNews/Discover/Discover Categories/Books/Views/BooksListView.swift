@@ -12,27 +12,20 @@ struct BooksListView: View {
     
     @ObservedObject var model: BooksViewModel
     
-    var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            HStack(alignment: .top) {
-                createBookColumn(startIndex: 0, endIndex: model.bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 1))
-                createBookColumn(startIndex: model.bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 1), endIndex: model.bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 2))
-                createBookColumn(startIndex: model.bookList.count.getEndIndexWhenDividedIntoThirds(forDivision: 2), endIndex: model.bookList.count)
-            }
-        }
-    }
+    let columns = [
+        GridItem(.adaptive(minimum: BookConstants.bookCardWidth), spacing: 10)
+    ]
     
-    func createBookColumn(startIndex: Int, endIndex: Int) -> some View {
-        VStack {
-            ForEach(startIndex..<endIndex, id:\.self) { index in
-                BookCard(book: model.bookList.elements[index].value, fetcher: model.googleBookFetcher)
-                    .padding(EdgeInsets(
-                        top: 10,
-                        leading: 10,
-                        bottom: 10,
-                        trailing: 0))
+    var body: some View {
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 10) {
+                ForEach(0..<model.bookList.count, id:\.self) { index in
+                    BookCard(book: model.bookList.elements[index].value, fetcher: model.googleBookFetcher)
+                        .padding(.leading, 10)
+                }
             }
         }
+        .padding(20)
     }
 }
 

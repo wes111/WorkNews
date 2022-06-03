@@ -29,10 +29,26 @@ struct Book: Identifiable {
         self.description = Book.createDescription(googleBook, shouldStripHTML: shouldStripHTML) ?? "Description Unavailable"
         self.publishedDate = Book.createPublishedDate(from: googleBook.volumeInfo.publishedDate)
         self.infoLink = URL(string: googleBook.volumeInfo.infoLink ?? "https://www.google.com")!
-        self.imageLink = Book.getImageLink(from: googleBook.volumeInfo.imageLinks?.thumbnail)
+        self.imageLink = Book.createImageLink(googleBook)
         self.asyncImage = AsyncImageView(link: imageLink, style: .bookCard, tryAgain: true)
         self.isbn10 = Book.createISBN(googleBook, isbnIndex: 0) ?? "ISBN-10 Unavailable"
         self.isbn13 = Book.createISBN(googleBook, isbnIndex: 1) ?? "ISBN-13 Unavailable"
+    }
+    
+    static func createImageLink(_ googleBook: GoogleBook) -> String? {
+        var imageLink: String?
+        if let link = googleBook.volumeInfo.imageLinks?.medium {
+            imageLink = link
+        } else if let link = googleBook.volumeInfo.imageLinks?.large {
+            imageLink = link
+        } else if let link = googleBook.volumeInfo.imageLinks?.small {
+            imageLink = link
+        } else if let link = googleBook.volumeInfo.imageLinks?.thumbnail {
+            imageLink = link
+        } else {
+            imageLink = nil
+        }
+        return getSecureImageLink(from: imageLink)
     }
     
     static func createISBN(_ googleBook: GoogleBook, isbnIndex index: Int) -> String? {
@@ -75,7 +91,7 @@ struct Book: Identifiable {
     // link begins with "http" instead of "https". This function replaces "http"
     // with "https". AsyncImage silently fails (returns nil for content) if "http"
     // is used to fetch an image.
-    static func getImageLink(from unsecureLink: String?) -> String? {
+    static func getSecureImageLink(from unsecureLink: String?) -> String? {
         guard let unsecureLink = unsecureLink else { return nil }
         
         if unsecureLink.count > 4 {

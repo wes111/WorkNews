@@ -17,7 +17,12 @@ struct MainNavigationView: View {
         NavigationView {
             DiscoverView()
                 .navigationTitle("WorkerNews")
+            
         }
+        // https://developer.apple.com/forums/thread/665369
+        // This fixes incorrect popping of view when a published
+        // var in the viewModel updates.
+        .navigationViewStyle(.stack)
         
     }
     

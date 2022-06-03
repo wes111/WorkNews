@@ -45,6 +45,7 @@
 		EED27DEC283AE419000FFB9E /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED27DEB283AE419000FFB9E /* StringExtensions.swift */; };
 		EED27DEF283C5D8E000FFB9E /* BookTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED27DEE283C5D8E000FFB9E /* BookTitleView.swift */; };
 		EED27DF1283C609D000FFB9E /* BookDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED27DF0283C609D000FFB9E /* BookDescriptionView.swift */; };
+		EED27DF3284A9D65000FFB9E /* BookConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED27DF2284A9D65000FFB9E /* BookConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		EED27DEB283AE419000FFB9E /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		EED27DEE283C5D8E000FFB9E /* BookTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTitleView.swift; sourceTree = "<group>"; };
 		EED27DF0283C609D000FFB9E /* BookDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionView.swift; sourceTree = "<group>"; };
+		EED27DF2284A9D65000FFB9E /* BookConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				EE32BFC32833331900890B06 /* Book.swift */,
 				EE59177A28349C81001457BE /* GoogleBookFetcher.swift */,
 				EE59178C283714C4001457BE /* Google Books Response Models */,
+				EED27DF2284A9D65000FFB9E /* BookConstants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				EED27DEC283AE419000FFB9E /* StringExtensions.swift in Sources */,
 				EE81CB342839782D00EF2BAF /* IntExtensions.swift in Sources */,
 				EE32BFB428332F8E00890B06 /* DiscoverView.swift in Sources */,
+				EED27DF3284A9D65000FFB9E /* BookConstants.swift in Sources */,
 				EE32BFBC283330A500890B06 /* DiscoverBooksScrollView.swift in Sources */,
 				EEB374842833394E006A5F9A /* Magazine.swift in Sources */,
 				EE32BFC0283330E900890B06 /* DiscoverMoviesScrollView.swift in Sources */,

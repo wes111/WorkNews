@@ -34,6 +34,9 @@ struct GoogleBook: Decodable {
     
     struct Images: Decodable {
         let thumbnail: String?
+        let small: String?
+        let medium: String?
+        let large: String?
     }
 }
 
