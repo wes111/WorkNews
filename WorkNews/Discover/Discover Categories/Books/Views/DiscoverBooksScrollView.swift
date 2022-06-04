@@ -10,17 +10,15 @@ import SwiftUI
 struct DiscoverBooksScrollView: View {
     
     @ObservedObject var model: BooksViewModel
+    private let itemCount = 10
         
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach($model.discoverBookList) { $book in
-                    BookCard(book: book, fetcher: model.googleBookFetcher)
-                        .padding(EdgeInsets(
-                            top: 10,
-                            leading: 10,
-                            bottom: 10,
-                            trailing: 0))
+                ForEach(0..<itemCount, id:\.self) { index in
+                    if model.bookList.count > index {
+                        BookCard(book: model.bookList.elements[index].value, fetcher: model.googleBookFetcher)
+                    }
                 }
             }
         }

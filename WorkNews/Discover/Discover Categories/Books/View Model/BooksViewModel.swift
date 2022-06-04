@@ -11,9 +11,7 @@ import OrderedCollections
 
 class BooksViewModel: ObservableObject {
     @Published var bookList: OrderedDictionary<String, Book> = [:]
-
-    @Published var discoverBookList: [Book] = []
-    @Published var bookCount: Int?
+    var bookCount: Int?
     
     private var subscriptions = Set<AnyCancellable>()
     
@@ -34,6 +32,7 @@ class BooksViewModel: ObservableObject {
             .store(in: &subscriptions)
     }
     
+    // Subscribe to book updates from the googleBookFetcher
     private func subscribeToBookUpdates() {
         googleBookFetcher.getGoogleBookUpdatePublisher()
             .sink { googleBook in
@@ -59,15 +58,13 @@ class BooksViewModel: ObservableObject {
             for googleBook in googleBookArray {
                 let book = Book(googleBook, shouldStripHTML: false)
                 DispatchQueue.main.async {
-                    if self.discoverBookList.count < 10 {
-                        self.discoverBookList.append(book)
-                    }
                     self.bookList[book.id] = book
                 }
             }
         }
     }
     
+    // Use a GoogleBook to update an existing book's information.
     private func updateBook(from googleBook: GoogleBook?) {
         guard let googleBook = googleBook else {
             // error
