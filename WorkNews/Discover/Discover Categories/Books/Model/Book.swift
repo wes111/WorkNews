@@ -100,7 +100,5 @@ struct Book: Identifiable {
         } else {
             return unsecureLink
         }
-        
     }
-    
 }
