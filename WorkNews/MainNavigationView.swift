@@ -11,6 +11,10 @@ struct MainNavigationView: View {
     
     init() {
         setUpNavBarAppearance()
+        
+        let bob = SpotifySongFetcher()
+        bob.setupSpotifyAuthentication()
+        
     }
     
     var body: some View {
