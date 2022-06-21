@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		EE32BFB428332F8E00890B06 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32BFB328332F8D00890B06 /* DiscoverView.swift */; };
 		EE32BFBC283330A500890B06 /* DiscoverBooksScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32BFBB283330A500890B06 /* DiscoverBooksScrollView.swift */; };
-		EE32BFBE283330C100890B06 /* DiscoverMusicScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32BFBD283330C100890B06 /* DiscoverMusicScrollView.swift */; };
+		EE32BFBE283330C100890B06 /* DiscoverSongsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32BFBD283330C100890B06 /* DiscoverSongsScrollView.swift */; };
 		EE32BFC0283330E900890B06 /* DiscoverMoviesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32BFBF283330E900890B06 /* DiscoverMoviesScrollView.swift */; };
 		EE32BFC2283330FA00890B06 /* DiscoverMagazinesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32BFC1283330FA00890B06 /* DiscoverMagazinesScrollView.swift */; };
 		EE32BFC42833331A00890B06 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32BFC32833331900890B06 /* Book.swift */; };
@@ -29,6 +29,7 @@
 		EE87BAE82861029500C4B09B /* GoogleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87BAE72861029500C4B09B /* GoogleAPI.swift */; };
 		EE87BAEA2861037300C4B09B /* SpotifySongFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87BAE92861037300C4B09B /* SpotifySongFetcher.swift */; };
 		EE87BAEC28611C6A00C4B09B /* SpotifyPlaylistResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87BAEB28611C6A00C4B09B /* SpotifyPlaylistResponseModel.swift */; };
+		EE87BAEF2861249F00C4B09B /* SongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87BAEE2861249F00C4B09B /* SongsViewModel.swift */; };
 		EEB3747D283338BD006A5F9A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3747C283338BD006A5F9A /* Movie.swift */; };
 		EEB3748128333928006A5F9A /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3748028333928006A5F9A /* Song.swift */; };
 		EEB374842833394E006A5F9A /* Magazine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB374832833394E006A5F9A /* Magazine.swift */; };
@@ -56,7 +57,7 @@
 /* Begin PBXFileReference section */
 		EE32BFB328332F8D00890B06 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		EE32BFBB283330A500890B06 /* DiscoverBooksScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBooksScrollView.swift; sourceTree = "<group>"; };
-		EE32BFBD283330C100890B06 /* DiscoverMusicScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMusicScrollView.swift; sourceTree = "<group>"; };
+		EE32BFBD283330C100890B06 /* DiscoverSongsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverSongsScrollView.swift; sourceTree = "<group>"; };
 		EE32BFBF283330E900890B06 /* DiscoverMoviesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMoviesScrollView.swift; sourceTree = "<group>"; };
 		EE32BFC1283330FA00890B06 /* DiscoverMagazinesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMagazinesScrollView.swift; sourceTree = "<group>"; };
 		EE32BFC32833331900890B06 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 		EE87BAE72861029500C4B09B /* GoogleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPI.swift; sourceTree = "<group>"; };
 		EE87BAE92861037300C4B09B /* SpotifySongFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySongFetcher.swift; sourceTree = "<group>"; };
 		EE87BAEB28611C6A00C4B09B /* SpotifyPlaylistResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyPlaylistResponseModel.swift; sourceTree = "<group>"; };
+		EE87BAEE2861249F00C4B09B /* SongsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsViewModel.swift; sourceTree = "<group>"; };
 		EEB3747C283338BD006A5F9A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		EEB3748028333928006A5F9A /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		EEB374832833394E006A5F9A /* Magazine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magazine.swift; sourceTree = "<group>"; };
@@ -127,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				EE32BFB728332FED00890B06 /* Books */,
-				EE32BFBA2833300B00890B06 /* Music */,
+				EE32BFBA2833300B00890B06 /* Songs */,
 				EE32BFB928332FFB00890B06 /* Movies */,
 				EE32BFB828332FF400890B06 /* Magazines */,
 			);
@@ -164,14 +166,15 @@
 			name = Movies;
 			sourceTree = "<group>";
 		};
-		EE32BFBA2833300B00890B06 /* Music */ = {
+		EE32BFBA2833300B00890B06 /* Songs */ = {
 			isa = PBXGroup;
 			children = (
-				EE32BFBD283330C100890B06 /* DiscoverMusicScrollView.swift */,
+				EE32BFBD283330C100890B06 /* DiscoverSongsScrollView.swift */,
 				EEB3747F283338FC006A5F9A /* Model */,
 				EEB3748B28334521006A5F9A /* Views */,
+				EE87BAED2861247000C4B09B /* View Model */,
 			);
-			path = Music;
+			path = Songs;
 			sourceTree = "<group>";
 		};
 		EE5917802835CBBB001457BE /* View Model */ = {
@@ -207,6 +210,14 @@
 				EE87BAEB28611C6A00C4B09B /* SpotifyPlaylistResponseModel.swift */,
 			);
 			path = "Spotify Response Models";
+			sourceTree = "<group>";
+		};
+		EE87BAED2861247000C4B09B /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE87BAEE2861249F00C4B09B /* SongsViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		EEB3747B283338A3006A5F9A /* Model */ = {
@@ -447,11 +458,12 @@
 				EEB3748128333928006A5F9A /* Song.swift in Sources */,
 				EEB3748A28334343006A5F9A /* MovieCard.swift in Sources */,
 				EE59178B28370923001457BE /* DiscoverSectionHeaderView.swift in Sources */,
-				EE32BFBE283330C100890B06 /* DiscoverMusicScrollView.swift in Sources */,
+				EE32BFBE283330C100890B06 /* DiscoverSongsScrollView.swift in Sources */,
 				EEB374962833489E006A5F9A /* LinearGradientExtensions.swift in Sources */,
 				EE591789283702F9001457BE /* BooksListView.swift in Sources */,
 				EE59179028372DAC001457BE /* ViewExtensions.swift in Sources */,
 				EEB3748728333D88006A5F9A /* BookCard.swift in Sources */,
+				EE87BAEF2861249F00C4B09B /* SongsViewModel.swift in Sources */,
 				EEB37490283346A3006A5F9A /* MagazineCard.swift in Sources */,
 				EEB6450A2810FE0500837737 /* WorkNewsApp.swift in Sources */,
 				EE5917852835D872001457BE /* ImageExtensions.swift in Sources */,

@@ -10,6 +10,7 @@ import SwiftUI
 struct DiscoverView: View {
     
     @StateObject var bookVM = BooksViewModel()
+    @StateObject var songsVM = SongsViewModel()
     
     var body: some View {
         List {
@@ -36,7 +37,7 @@ struct DiscoverView: View {
             }
 
             Section {
-                DiscoverMusicScrollView()
+                DiscoverSongsScrollView(model: songsVM)
             } header: {
                 DiscoverSectionHeaderView(
                     model: bookVM,

@@ -19,12 +19,17 @@ class SpotifySongFetcher {
     
     init() {
         subscribeToTokenSubject()
+        setupSpotifyAuthentication()
     }
     
-    func setupSpotifyAuthentication() {
+    private func setupSpotifyAuthentication() {
         let request = spotifyAPI.authenticationRequest
         guard let request = request else { return }
         getAuthenticationToken(using: request)
+    }
+    
+    func getSpotifyPlaylistPublisher() -> AnyPublisher<SpotifyPlaylistResponseModel?, Never> {
+        return spotifyPlaylistSubject.eraseToAnyPublisher()
     }
     
     private func subscribeToTokenSubject() {
@@ -61,6 +66,7 @@ class SpotifySongFetcher {
                 do {
                     let playlist = try self.decoder
                         .decode(SpotifyPlaylistResponseModel.self, from: data)
+                    self.spotifyPlaylistSubject.send(playlist)
                     print(playlist)
                 } catch {
                     print(error)

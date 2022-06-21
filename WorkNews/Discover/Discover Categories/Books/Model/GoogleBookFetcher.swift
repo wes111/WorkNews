@@ -20,7 +20,6 @@ class GoogleBookFetcher {
     private let googleBookUpdateSubject = PassthroughSubject<GoogleBook?, Never>()
     
     private var fetchedBookCount = 0
-    //private var totalBooks: Int?
     private let shouldFetchAllBooks = false
     
     init() {
