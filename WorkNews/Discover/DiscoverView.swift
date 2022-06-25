@@ -39,14 +39,11 @@ struct DiscoverView: View {
             Section {
                 DiscoverSongsScrollView(model: songsVM)
             } header: {
-                DiscoverSectionHeaderView(
-                    model: bookVM,
-                    navigationAction: {
-                        print("place holder")
-                    },
+                DiscoverSongsSectionHeaderView(
+                    model: songsVM,
                     title: "Music")
             }
-
+            
             Section {
                 DiscoverMagazinesScrollView()
             } header: {
@@ -55,7 +52,29 @@ struct DiscoverView: View {
                     navigationAction: {
                         print("place holder")
                     },
-                    title: "Magazines")
+                    title: "Podcasts")
+            }
+            
+            Section {
+                DiscoverMagazinesScrollView()
+            } header: {
+                DiscoverSectionHeaderView(
+                    model: bookVM,
+                    navigationAction: {
+                        print("place holder")
+                    },
+                    title: "Articles")
+            }
+            
+            Section {
+                DiscoverMagazinesScrollView()
+            } header: {
+                DiscoverSectionHeaderView(
+                    model: bookVM,
+                    navigationAction: {
+                        print("place holder")
+                    },
+                    title: "Websites")
             }
         }
     }

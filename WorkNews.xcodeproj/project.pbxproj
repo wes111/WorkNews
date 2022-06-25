@@ -31,6 +31,9 @@
 		EE87BAEC28611C6A00C4B09B /* SpotifyPlaylistResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87BAEB28611C6A00C4B09B /* SpotifyPlaylistResponseModel.swift */; };
 		EE87BAEF2861249F00C4B09B /* SongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87BAEE2861249F00C4B09B /* SongsViewModel.swift */; };
 		EE87BAF128669D3700C4B09B /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87BAF028669D3600C4B09B /* SongDetailView.swift */; };
+		EE87BAF328678FEA00C4B09B /* SongsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87BAF228678FEA00C4B09B /* SongsListView.swift */; };
+		EE87BAF52867905E00C4B09B /* DiscoverSongsSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87BAF42867905E00C4B09B /* DiscoverSongsSectionHeaderView.swift */; };
+		EE87BAF72867944100C4B09B /* SongConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87BAF62867944100C4B09B /* SongConstants.swift */; };
 		EEB3747D283338BD006A5F9A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3747C283338BD006A5F9A /* Movie.swift */; };
 		EEB3748128333928006A5F9A /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3748028333928006A5F9A /* Song.swift */; };
 		EEB374842833394E006A5F9A /* Magazine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB374832833394E006A5F9A /* Magazine.swift */; };
@@ -80,6 +83,9 @@
 		EE87BAEB28611C6A00C4B09B /* SpotifyPlaylistResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyPlaylistResponseModel.swift; sourceTree = "<group>"; };
 		EE87BAEE2861249F00C4B09B /* SongsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsViewModel.swift; sourceTree = "<group>"; };
 		EE87BAF028669D3600C4B09B /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
+		EE87BAF228678FEA00C4B09B /* SongsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListView.swift; sourceTree = "<group>"; };
+		EE87BAF42867905E00C4B09B /* DiscoverSongsSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverSongsSectionHeaderView.swift; sourceTree = "<group>"; };
+		EE87BAF62867944100C4B09B /* SongConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongConstants.swift; sourceTree = "<group>"; };
 		EEB3747C283338BD006A5F9A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		EEB3748028333928006A5F9A /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		EEB374832833394E006A5F9A /* Magazine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magazine.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 				EE32BFB328332F8D00890B06 /* DiscoverView.swift */,
 				EE59178A28370923001457BE /* DiscoverSectionHeaderView.swift */,
 				EE32BFB628332FD600890B06 /* Discover Categories */,
+				EE87BAF42867905E00C4B09B /* DiscoverSongsSectionHeaderView.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -245,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				EEB3748028333928006A5F9A /* Song.swift */,
+				EE87BAF62867944100C4B09B /* SongConstants.swift */,
 				EE87BAE22860ECCD00C4B09B /* SpotifyAPI.swift */,
 				EE87BAE92861037300C4B09B /* SpotifySongFetcher.swift */,
 				EE87BAE42860EF1B00C4B09B /* Spotify Response Models */,
@@ -285,6 +293,7 @@
 				EE32BFBD283330C100890B06 /* DiscoverSongsScrollView.swift */,
 				EEB3748C2833452F006A5F9A /* SongCard.swift */,
 				EE87BAF028669D3600C4B09B /* SongDetailView.swift */,
+				EE87BAF228678FEA00C4B09B /* SongsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -448,6 +457,7 @@
 				EED27DF1283C609D000FFB9E /* BookDescriptionView.swift in Sources */,
 				EED27DEF283C5D8E000FFB9E /* BookTitleView.swift in Sources */,
 				EED27DE12839B3B4000FFB9E /* BookDetailView.swift in Sources */,
+				EE87BAF52867905E00C4B09B /* DiscoverSongsSectionHeaderView.swift in Sources */,
 				EE32BFC42833331A00890B06 /* Book.swift in Sources */,
 				EE5917872835F8A9001457BE /* MainNavigationView.swift in Sources */,
 				EE87BAE62860EF3F00C4B09B /* SpotifyAuthenticationResponseModel.swift in Sources */,
@@ -470,8 +480,10 @@
 				EEB37490283346A3006A5F9A /* MagazineCard.swift in Sources */,
 				EEB6450A2810FE0500837737 /* WorkNewsApp.swift in Sources */,
 				EE5917852835D872001457BE /* ImageExtensions.swift in Sources */,
+				EE87BAF72867944100C4B09B /* SongConstants.swift in Sources */,
 				EE59177F2835CBA9001457BE /* BooksViewModel.swift in Sources */,
 				EEB3749328334818006A5F9A /* NeumorphicViewModifier.swift in Sources */,
+				EE87BAF328678FEA00C4B09B /* SongsListView.swift in Sources */,
 				EE87BAEC28611C6A00C4B09B /* SpotifyPlaylistResponseModel.swift in Sources */,
 				EED27DEA283ACAEF000FFB9E /* GoogleVolumeResponseModel.swift in Sources */,
 				EE87BAEA2861037300C4B09B /* SpotifySongFetcher.swift in Sources */,

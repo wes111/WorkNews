@@ -19,7 +19,7 @@ enum ImageStyle {
         case .bookCard:
             return CGSize(width: BookConstants.bookCardWidth, height: 154)
         case .songCard:
-            return CGSize(width: 125, height: 125)
+            return CGSize(width: SongConstants.songCardWidth, height: SongConstants.songCardWidth)
         case .bookDetail:
             return CGSize(width: 196, height: 308)
         case .songDetail:
