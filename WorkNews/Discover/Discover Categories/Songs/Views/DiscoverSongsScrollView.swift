@@ -25,6 +25,7 @@ struct DiscoverSongsScrollView: View {
     }
 }
 
+
 // MARK: - Preview
 struct DiscoverMusicScrollView_Previews: PreviewProvider {
     

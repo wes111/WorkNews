@@ -59,6 +59,8 @@ class SpotifySongFetcher {
     }
     
     private func getPlaylist(using request: URLRequest) {
+        // Note: This request causes the 'Client called nw_connection_copy_metadata on unconnected nw_connection'
+        // to be printed to the console.
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 print(error)
@@ -67,7 +69,6 @@ class SpotifySongFetcher {
                     let playlist = try self.decoder
                         .decode(SpotifyPlaylistResponseModel.self, from: data)
                     self.spotifyPlaylistSubject.send(playlist)
-                    print(playlist)
                 } catch {
                     print(error)
                 }

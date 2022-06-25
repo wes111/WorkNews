@@ -15,6 +15,7 @@ struct Song: Identifiable {
     let imageLink: String
     let albumTitle: String
     let releaseDate: String
+    let asyncImage: AsyncImageView
     
     init(_ spotifySong: SpotifyItem) {
         self.id = spotifySong.track.id
@@ -23,6 +24,7 @@ struct Song: Identifiable {
         self.imageLink = Song.createImageLinkString(using: spotifySong)
         self.albumTitle = spotifySong.track.album.name
         self.releaseDate = spotifySong.track.album.release_date
+        self.asyncImage = AsyncImageView(link: imageLink, style: .songCard, tryAgain: true)
     }
     
     static private func createArtistsString(using spotifySong: SpotifyItem) -> String {

@@ -13,8 +13,9 @@ struct SongCard: View {
     
     var body: some View {
         VStack {
-            Text(song.title)
-            Text(song.artists)
+            NavigationLink(destination: SongDetailView(song: song)) {
+                song.asyncImage
+            }
         }
         
     }
