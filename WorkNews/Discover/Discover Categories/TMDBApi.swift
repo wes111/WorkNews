@@ -14,7 +14,7 @@ struct TMDBApi: MediaItemAPI {
     // 'w342' refers to the size of the image.
     private static let baseImageURL = "https://image.tmdb.org/t/p/w342"
     
-    func createMediaListRequest(using token: String?) -> URLRequest? {
+    func createMediaListRequest() -> URLRequest? {
         let urlString = "\(baseListURL)/\(movieListID)"
         var urlComponents = URLComponents(string: urlString)
         urlComponents?.queryItems = [

@@ -19,8 +19,10 @@ struct SpotifyAPI: AuthenticationRequestable {
     private let baseTokenURL = "https://accounts.spotify.com/api/token"
     private let basePlaylistURL = "https://api.spotify.com/v1/playlists"
     private let contentType = "application/x-www-form-urlencoded"
+    
+    var token: String?
 
-    func createMediaListRequest(using token: String?) -> URLRequest? {
+    func createMediaListRequest() -> URLRequest? {
         let urlString = "\(basePlaylistURL)/\(playListID)"
         let url = URL(string: urlString)
         guard let url = url else { return nil }

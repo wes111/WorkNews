@@ -25,7 +25,7 @@ class BooksViewModel: ObservableObject {
     
     // Subscribe to books from the googleBookFetcher.
     private func subscribeToBooks() {
-        googleBookFetcher.getGoogleBooksPublisher()
+        googleBookFetcher.getMediaListPublisher()
             .sink { googleBooksResponseModel in
                 self.createBooks(from: googleBooksResponseModel)
             }

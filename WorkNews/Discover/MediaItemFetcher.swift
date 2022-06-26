@@ -14,21 +14,21 @@ protocol MediaItem {
 }
 
 protocol MediaItemAPI {
-    func createMediaListRequest(using token: String?) -> URLRequest?
+    func createMediaListRequest() -> URLRequest?
     init()
 }
 
 class MediaItemFetcher<T: MediaItem>  {
     
     // This could have an initial value provided from local storage.
-    private let mediaListSubject = CurrentValueSubject<T.ResponseModel?, Never>(nil)
-    let api = T.API()
+    let mediaListSubject = CurrentValueSubject<T.ResponseModel?, Never>(nil)
+    var api = T.API()
     let decoder = JSONDecoder()
     var subscriptions = Set<AnyCancellable>()
     
     // If a fetcher needs a token to create the request, override this init.
     init() {
-        guard let request = api.createMediaListRequest(using: nil) else { return }
+        guard let request = api.createMediaListRequest() else { return }
         getMediaList(using: request)
     }
     

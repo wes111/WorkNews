@@ -33,7 +33,8 @@ class SpotifySongFetcher: MediaItemFetcher<SongMediaItem> {
     private func subscribeToTokenSubject() {
         spotifyTokenSubject.sink { authenticationModel in
             let token = authenticationModel.access_token
-            let request = self.api.createMediaListRequest(using: token)
+            self.api.token = token
+            let request = self.api.createMediaListRequest()
             guard let request = request else { return }
             self.getMediaList(using: request)
         }.store(in: &subscriptions)

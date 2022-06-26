@@ -144,6 +144,7 @@
 			children = (
 				EE32BFB328332F8D00890B06 /* DiscoverView.swift */,
 				EE59178A28370923001457BE /* DiscoverSectionHeaderView.swift */,
+				EE87BAFA2867CEE100C4B09B /* MediaItemFetcher.swift */,
 				EE32BFB628332FD600890B06 /* Discover Categories */,
 			);
 			path = Discover;
@@ -276,7 +277,6 @@
 			children = (
 				EEB3747C283338BD006A5F9A /* Movie.swift */,
 				EE87BAF82867C91800C4B09B /* TMDBApi.swift */,
-				EE87BAFA2867CEE100C4B09B /* MediaItemFetcher.swift */,
 				EE87BAFC2867D2A200C4B09B /* TMDB Response Models */,
 				EE323E0F2867EBC900152C97 /* MovieConstants.swift */,
 			);
