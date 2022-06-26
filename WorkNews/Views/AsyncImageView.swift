@@ -10,8 +10,10 @@ import SwiftUI
 enum ImageStyle {
     case bookCard
     case songCard
+    case movieCard // 342 X 513
     case bookDetail
     case songDetail
+    case movieDetail
     case systemForward
     
     var size: CGSize {
@@ -20,10 +22,14 @@ enum ImageStyle {
             return CGSize(width: BookConstants.bookCardWidth, height: 154)
         case .songCard:
             return CGSize(width: SongConstants.songCardWidth, height: SongConstants.songCardWidth)
+        case .movieCard:
+            return CGSize(width: MovieConstants.movieCardWidth, height: 513.0 / 3)
         case .bookDetail:
             return CGSize(width: 196, height: 308)
         case .songDetail:
             return CGSize(width: 250, height: 250)
+        case .movieDetail:
+            return CGSize(width: MovieConstants.movieCardWidth * 2, height: (513.0 / 3) * 2)
         case .systemForward: // 36 x 30
             return CGSize(width: 18, height: 15)
         }

@@ -8,34 +8,25 @@
 import SwiftUI
 
 struct DiscoverMoviesScrollView: View {
-    let moviesArray =
-    [
-        Movie(image: Image(systemName: "film")),
-        Movie(image: Image(systemName: "film")),
-        Movie(image: Image(systemName: "film")),
-        Movie(image: Image(systemName: "film")),
-        Movie(image: Image(systemName: "film")),
-        Movie(image: Image(systemName: "film")),
-        Movie(image: Image(systemName: "film")),
-        Movie(image: Image(systemName: "film")),
-        Movie(image: Image(systemName: "film")),
-        Movie(image: Image(systemName: "film"))
-    ]
+
+    @ObservedObject var model: MoviesViewModel
+    private let itemCount = 10
         
     var body: some View {
-        ScrollView(.horizontal) {
+        ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(moviesArray) { movie in
-                    MovieCard(movie: movie)
-                        .padding(.leading, 10)
+                ForEach(0..<itemCount, id: \.self) { index in
+                    if model.moviesList.count > index {
+                        MovieCard(movie: model.moviesList.elements[index].value)
+                    }
                 }
             }
         }
     }
 }
 
-struct DiscoverMoviesScrollView_Previews: PreviewProvider {
-    static var previews: some View {
-        DiscoverMoviesScrollView()
-    }
-}
+//struct DiscoverMoviesScrollView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DiscoverMoviesScrollView()
+//    }
+//}

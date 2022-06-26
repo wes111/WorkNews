@@ -11,6 +11,7 @@ struct DiscoverView: View {
     
     @StateObject var bookVM = BooksViewModel()
     @StateObject var songsVM = SongsViewModel()
+    @StateObject var moviesVM = MoviesViewModel()
     
     var body: some View {
         List {
@@ -26,13 +27,10 @@ struct DiscoverView: View {
             }
             
             Section {
-                DiscoverMoviesScrollView()
+                DiscoverMoviesScrollView(model: moviesVM)
             } header: {
-                DiscoverSectionHeaderView(
-                    model: bookVM,
-                    navigationAction: {
-                        print("place holder")
-                    },
+                DiscoverMoviesSectionHeaderView(
+                    model: moviesVM,
                     title: "Movies")
             }
 
@@ -75,6 +73,17 @@ struct DiscoverView: View {
                         print("place holder")
                     },
                     title: "Websites")
+            }
+            
+            Section {
+                DiscoverMagazinesScrollView()
+            } header: {
+                DiscoverSectionHeaderView(
+                    model: bookVM,
+                    navigationAction: {
+                        print("place holder")
+                    },
+                    title: "Memes")
             }
         }
     }

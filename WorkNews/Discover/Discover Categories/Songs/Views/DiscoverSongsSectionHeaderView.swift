@@ -10,13 +10,9 @@ import SwiftUI
 struct DiscoverSongsSectionHeaderView: View {
     
     @ObservedObject var model: SongsViewModel
-    @State var navButtonIsHidden = true
-    //let navigationAction: () -> ()
     let title: String
     
-    
     var body: some View {
-        
         HStack {
             Text(title)
                 .font(.title2)

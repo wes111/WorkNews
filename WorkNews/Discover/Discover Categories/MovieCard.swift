@@ -12,14 +12,16 @@ struct MovieCard: View {
     let movie: Movie
     
     var body: some View {
-        movie.image
-            .resizable()
-            .frame(width: 51, height: 66)
+        VStack {
+            NavigationLink(destination: MovieDetailView(movie: movie)) {
+                movie.asyncImage
+            }
+        }
     }
 }
 
-struct MovieCard_Previews: PreviewProvider {
-    static var previews: some View {
-        MovieCard(movie: Movie(image: Image(systemName: "film")))
-    }
-}
+//struct MovieCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MovieCard(movie: Movie(image: Image(systemName: "film")))
+//    }
+//}

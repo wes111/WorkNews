@@ -17,7 +17,6 @@ struct SongCard: View {
                 song.asyncImage
             }
         }
-        
     }
 }
 
