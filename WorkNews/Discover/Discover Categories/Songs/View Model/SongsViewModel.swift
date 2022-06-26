@@ -21,7 +21,7 @@ class SongsViewModel: ObservableObject {
     
     // Subscribe to songs from the songFetcher.
     private func subscribeToSongs() {
-        songFetcher.getSpotifyPlaylistPublisher()
+        songFetcher.getMediaListPublisher()
             .sink { spotifyPlaylistModel in
                 self.createSongs(from: spotifyPlaylistModel)
             }

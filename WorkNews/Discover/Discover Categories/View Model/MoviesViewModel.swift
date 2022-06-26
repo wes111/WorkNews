@@ -9,11 +9,16 @@ import Combine
 import Foundation
 import OrderedCollections
 
+struct MovieMediaItem: MediaItem {
+    typealias ResponseModel = TMDBMovieListResponseModel
+    typealias API = TMDBApi
+}
+
 class MoviesViewModel: ObservableObject {
     @Published var moviesList: OrderedDictionary<Int, Movie> = [:]
     private var subscriptions = Set<AnyCancellable>()
     
-    let movieFetcher = TMDBMovieFetcher()
+    let movieFetcher = MediaItemFetcher<MovieMediaItem>()
     
     init() {
         subscribeToMovies()
@@ -21,7 +26,7 @@ class MoviesViewModel: ObservableObject {
     
     // Subscribe to movies from the moviesFetcher.
     private func subscribeToMovies() {
-        movieFetcher.getTMDBMovieListPublisher()
+        movieFetcher.getMediaListPublisher()
             .sink { tmdbMovieListModel in
                 self.createMovies(from: tmdbMovieListModel)
             }

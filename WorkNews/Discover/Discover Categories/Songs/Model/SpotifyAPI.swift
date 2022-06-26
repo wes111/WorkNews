@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct SpotifyAPI {
+protocol AuthenticationRequestable: MediaItemAPI {
+    var authenticationRequest: URLRequest? { get }
+}
+
+struct SpotifyAPI: AuthenticationRequestable {
     
     private let clientID = "86354afd1b3547eda445190946c65c9b"
     private let clientSecret = "e92010769cd84224949ddb0d436b06c3"
@@ -15,14 +19,15 @@ struct SpotifyAPI {
     private let baseTokenURL = "https://accounts.spotify.com/api/token"
     private let basePlaylistURL = "https://api.spotify.com/v1/playlists"
     private let contentType = "application/x-www-form-urlencoded"
-    
-    func createPlaylistRequest(using token: String) -> URLRequest? {
+
+    func createMediaListRequest(using token: String?) -> URLRequest? {
         let urlString = "\(basePlaylistURL)/\(playListID)"
         let url = URL(string: urlString)
         guard let url = url else { return nil }
         var request = URLRequest(url: url)
         
         request.httpMethod = "GET"
+        guard let token = token else { return nil }
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return request
     }
