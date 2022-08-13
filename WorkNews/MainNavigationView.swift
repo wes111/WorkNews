@@ -9,38 +9,35 @@ import SwiftUI
 
 struct MainNavigationView: View {
     
-    init() {
-        setUpNavBarAppearance()
-    }
-    
     var body: some View {
-        NavigationView {
-            DiscoverView()
-                .navigationTitle("WorkerNews")
-            
-        }
-        // https://developer.apple.com/forums/thread/665369
-        // This fixes incorrect popping of view when a published
-        // var in the viewModel updates.
-        .navigationViewStyle(.stack)
         
+        TabView {
+            Text("Events")
+                .tabItem {
+                    Label("Events", systemImage: "list.dash")
+                }
+            
+            Text("Voting")
+                .tabItem {
+                    Label("Voting", systemImage: "person.text.rectangle")
+                }
+            
+            Text("Feed")
+                .tabItem {
+                    Label("Feed", systemImage: "square.and.pencil")
+                }
+            
+            DiscoverNavigationTab()
+                .tabItem {
+                    Label("Resources", systemImage: "books.vertical")
+                }
+            
+            Text("Settings")
+                .tabItem {
+                    Label("Settings", systemImage: "gearshape")
+                }
+        }
     }
-    
-    // MARK: - Helper Functions
-
-    func setUpNavBarAppearance() {
-        let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.backgroundColor = .red
-        navBarAppearance.titleTextAttributes =
-            [.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes =
-            [.foregroundColor: UIColor.white]
-
-        UINavigationBar.appearance().standardAppearance = navBarAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-    }
-
 }
 
 struct MainNavigationView_Previews: PreviewProvider {
