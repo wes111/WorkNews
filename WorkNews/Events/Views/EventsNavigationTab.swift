@@ -7,20 +7,35 @@
 
 import SwiftUI
 
-enum EventsTab {
-    case inPerson
-    case online
-    case all
-}
-
 struct EventsNavigationTab: View {
     
+    private enum EventsTab {
+        case inPerson
+        case online
+        case all
+    }
+    
     @State var isShowingDetailView = false
+    @State var isShowingAddEventView = false
     @State private var selectedTab: EventsTab = .all
     
     var body: some View {
         VStack {
-            Text("Events")
+            ZStack {
+                Text("Events")
+                HStack {
+                    Spacer()
+                    Button {
+                        isShowingAddEventView = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .fullScreenCover(isPresented: $isShowingAddEventView) {
+                        AddEventView()
+                    }
+                }
+            }
+            
             Picker("", selection: $selectedTab) {
                 
                 Text("In Person").tag(EventsTab.inPerson)
@@ -37,12 +52,13 @@ struct EventsNavigationTab: View {
             .background(Color.red)
             .fullScreenCover(isPresented: $isShowingDetailView) {
                 NavigationView {
-                    QuizView(isShowingSelf: $isShowingDetailView, question: PoliticalLeaningsQuestion.getFirst())
+                    QuizView(isShowingSelf: $isShowingDetailView, question: PoliticsQuiz.getFirst())
                 }
             }
             
             Spacer()
         }
+        .padding()
         .onChange(of: selectedTab) { tab in
             switch tab {
             case .inPerson:

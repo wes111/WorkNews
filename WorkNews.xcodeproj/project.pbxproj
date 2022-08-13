@@ -17,10 +17,10 @@
 		EE32BFC0283330E900890B06 /* DiscoverMoviesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32BFBF283330E900890B06 /* DiscoverMoviesScrollView.swift */; };
 		EE32BFC2283330FA00890B06 /* DiscoverMagazinesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32BFC1283330FA00890B06 /* DiscoverMagazinesScrollView.swift */; };
 		EE32BFC42833331A00890B06 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32BFC32833331900890B06 /* Book.swift */; };
-		EE48C3EB28A7FDFA0077585C /* PoliticalLeaningsQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3EA28A7FDFA0077585C /* PoliticalLeaningsQuestion.swift */; };
+		EE48C3EB28A7FDFA0077585C /* PoliticsQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3EA28A7FDFA0077585C /* PoliticsQuiz.swift */; };
 		EE48C3EE28A802910077585C /* Advanceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3ED28A802910077585C /* Advanceable.swift */; };
 		EE48C3F028A806EF0077585C /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3EF28A806EF0077585C /* QuizView.swift */; };
-		EE48C3F228A80E4A0077585C /* QuestionTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3F128A80E490077585C /* QuestionTile.swift */; };
+		EE48C3F228A80E4A0077585C /* OptionTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3F128A80E490077585C /* OptionTile.swift */; };
 		EE48C3F428A811540077585C /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3F328A811540077585C /* SecondaryButton.swift */; };
 		EE48C3F628A812480077585C /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3F528A812480077585C /* PrimaryButton.swift */; };
 		EE48C3F828A817F50077585C /* QuizSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3F728A817F50077585C /* QuizSuccessView.swift */; };
@@ -35,6 +35,10 @@
 		EE59178B28370923001457BE /* DiscoverSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59178A28370923001457BE /* DiscoverSectionHeaderView.swift */; };
 		EE59178E2837150B001457BE /* GoogleBookShelfResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59178D2837150B001457BE /* GoogleBookShelfResponseModel.swift */; };
 		EE59179028372DAC001457BE /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59178F28372DAC001457BE /* ViewExtensions.swift */; };
+		EE7E817C28A84655008D206C /* Quizzable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E817B28A84655008D206C /* Quizzable.swift */; };
+		EE7E817F28A84766008D206C /* OptionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E817E28A84766008D206C /* OptionInfo.swift */; };
+		EE7E818228A84BDD008D206C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E818128A84BDD008D206C /* Event.swift */; };
+		EE7E818528A84C1B008D206C /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E818428A84C1B008D206C /* AddEventView.swift */; };
 		EE81CB342839782D00EF2BAF /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE81CB332839782D00EF2BAF /* IntExtensions.swift */; };
 		EE87BAE32860ECCD00C4B09B /* SpotifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87BAE22860ECCD00C4B09B /* SpotifyAPI.swift */; };
 		EE87BAE62860EF3F00C4B09B /* SpotifyAuthenticationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87BAE52860EF3F00C4B09B /* SpotifyAuthenticationResponseModel.swift */; };
@@ -86,10 +90,10 @@
 		EE32BFBF283330E900890B06 /* DiscoverMoviesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMoviesScrollView.swift; sourceTree = "<group>"; };
 		EE32BFC1283330FA00890B06 /* DiscoverMagazinesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMagazinesScrollView.swift; sourceTree = "<group>"; };
 		EE32BFC32833331900890B06 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		EE48C3EA28A7FDFA0077585C /* PoliticalLeaningsQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticalLeaningsQuestion.swift; sourceTree = "<group>"; };
+		EE48C3EA28A7FDFA0077585C /* PoliticsQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticsQuiz.swift; sourceTree = "<group>"; };
 		EE48C3ED28A802910077585C /* Advanceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advanceable.swift; sourceTree = "<group>"; };
 		EE48C3EF28A806EF0077585C /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
-		EE48C3F128A80E490077585C /* QuestionTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTile.swift; sourceTree = "<group>"; };
+		EE48C3F128A80E490077585C /* OptionTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTile.swift; sourceTree = "<group>"; };
 		EE48C3F328A811540077585C /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		EE48C3F528A812480077585C /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		EE48C3F728A817F50077585C /* QuizSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSuccessView.swift; sourceTree = "<group>"; };
@@ -104,6 +108,10 @@
 		EE59178A28370923001457BE /* DiscoverSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverSectionHeaderView.swift; sourceTree = "<group>"; };
 		EE59178D2837150B001457BE /* GoogleBookShelfResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookShelfResponseModel.swift; sourceTree = "<group>"; };
 		EE59178F28372DAC001457BE /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		EE7E817B28A84655008D206C /* Quizzable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quizzable.swift; sourceTree = "<group>"; };
+		EE7E817E28A84766008D206C /* OptionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionInfo.swift; sourceTree = "<group>"; };
+		EE7E818128A84BDD008D206C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		EE7E818428A84C1B008D206C /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
 		EE81CB332839782D00EF2BAF /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		EE87BAE22860ECCD00C4B09B /* SpotifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPI.swift; sourceTree = "<group>"; };
 		EE87BAE52860EF3F00C4B09B /* SpotifyAuthenticationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuthenticationResponseModel.swift; sourceTree = "<group>"; };
@@ -223,11 +231,8 @@
 		EE48C3E928A7FD350077585C /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				EE48C3EA28A7FDFA0077585C /* PoliticalLeaningsQuestion.swift */,
-				EE48C3EF28A806EF0077585C /* QuizView.swift */,
-				EE48C3F128A80E490077585C /* QuestionTile.swift */,
-				EE48C3F728A817F50077585C /* QuizSuccessView.swift */,
-				EE48C3F928A8186B0077585C /* EventsNavigationTab.swift */,
+				EE7E818328A84BFE008D206C /* Views */,
+				EE7E818028A84BCE008D206C /* Model */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -266,6 +271,51 @@
 				EED27DE9283ACAEF000FFB9E /* GoogleVolumeResponseModel.swift */,
 			);
 			path = "Google Books Response Models";
+			sourceTree = "<group>";
+		};
+		EE7E817928A84512008D206C /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				EE7E817B28A84655008D206C /* Quizzable.swift */,
+				EE7E817D28A84741008D206C /* Model */,
+				EE7E817A28A84550008D206C /* Views */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		EE7E817A28A84550008D206C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE48C3EF28A806EF0077585C /* QuizView.swift */,
+				EE48C3F128A80E490077585C /* OptionTile.swift */,
+				EE48C3F728A817F50077585C /* QuizSuccessView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EE7E817D28A84741008D206C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE7E817E28A84766008D206C /* OptionInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EE7E818028A84BCE008D206C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE7E818128A84BDD008D206C /* Event.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EE7E818328A84BFE008D206C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE48C3F928A8186B0077585C /* EventsNavigationTab.swift */,
+				EE7E818428A84C1B008D206C /* AddEventView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EE87BAE42860EF1B00C4B09B /* Spotify Response Models */ = {
@@ -429,6 +479,8 @@
 				EEB645092810FE0500837737 /* WorkNewsApp.swift */,
 				EEB6450B2810FE0500837737 /* ContentView.swift */,
 				EE5917862835F8A9001457BE /* MainNavigationView.swift */,
+				EE48C3EA28A7FDFA0077585C /* PoliticsQuiz.swift */,
+				EE7E817928A84512008D206C /* Quiz */,
 				EE48C3E928A7FD350077585C /* Events */,
 				EE32BFB528332FBF00890B06 /* Discover */,
 				EE5917812835D787001457BE /* Views */,
@@ -542,12 +594,15 @@
 				EE48C3FA28A8186B0077585C /* EventsNavigationTab.swift in Sources */,
 				EED27DE12839B3B4000FFB9E /* BookDetailView.swift in Sources */,
 				EE87BAF52867905E00C4B09B /* DiscoverSongsSectionHeaderView.swift in Sources */,
+				EE7E818528A84C1B008D206C /* AddEventView.swift in Sources */,
 				EE32BFC42833331A00890B06 /* Book.swift in Sources */,
+				EE7E817F28A84766008D206C /* OptionInfo.swift in Sources */,
 				EE48C3F828A817F50077585C /* QuizSuccessView.swift in Sources */,
 				EE5917872835F8A9001457BE /* MainNavigationView.swift in Sources */,
 				EE87BAE62860EF3F00C4B09B /* SpotifyAuthenticationResponseModel.swift in Sources */,
 				EEB6450C2810FE0500837737 /* ContentView.swift in Sources */,
 				EE323E102867EBC900152C97 /* MovieConstants.swift in Sources */,
+				EE7E817C28A84655008D206C /* Quizzable.swift in Sources */,
 				EE59177D28349F30001457BE /* GoogleBooksResponseModel.swift in Sources */,
 				EEB3748D2833452F006A5F9A /* SongCard.swift in Sources */,
 				EEB3747D283338BD006A5F9A /* Movie.swift in Sources */,
@@ -561,7 +616,7 @@
 				EE32BFBE283330C100890B06 /* DiscoverSongsScrollView.swift in Sources */,
 				EE323E0E2867E99400152C97 /* MoviesListView.swift in Sources */,
 				EEB374962833489E006A5F9A /* LinearGradientExtensions.swift in Sources */,
-				EE48C3F228A80E4A0077585C /* QuestionTile.swift in Sources */,
+				EE48C3F228A80E4A0077585C /* OptionTile.swift in Sources */,
 				EE591789283702F9001457BE /* BooksListView.swift in Sources */,
 				EE59179028372DAC001457BE /* ViewExtensions.swift in Sources */,
 				EE87BAF92867C91800C4B09B /* TMDBApi.swift in Sources */,
@@ -575,6 +630,7 @@
 				EE59177F2835CBA9001457BE /* BooksViewModel.swift in Sources */,
 				EEB3749328334818006A5F9A /* NeumorphicViewModifier.swift in Sources */,
 				EE87BAF328678FEA00C4B09B /* SongsListView.swift in Sources */,
+				EE7E818228A84BDD008D206C /* Event.swift in Sources */,
 				EE87BB012867D97D00C4B09B /* MoviesViewModel.swift in Sources */,
 				EE87BAEC28611C6A00C4B09B /* SpotifyPlaylistResponseModel.swift in Sources */,
 				EED27DEA283ACAEF000FFB9E /* GoogleVolumeResponseModel.swift in Sources */,
@@ -593,7 +649,7 @@
 				EE87BB032867E49200C4B09B /* TMDBMovieListResponseModel.swift in Sources */,
 				EE32BFC0283330E900890B06 /* DiscoverMoviesScrollView.swift in Sources */,
 				EE48C3F628A812480077585C /* PrimaryButton.swift in Sources */,
-				EE48C3EB28A7FDFA0077585C /* PoliticalLeaningsQuestion.swift in Sources */,
+				EE48C3EB28A7FDFA0077585C /* PoliticsQuiz.swift in Sources */,
 				EE59177B28349C81001457BE /* GoogleBookFetcher.swift in Sources */,
 				EE48C3F028A806EF0077585C /* QuizView.swift in Sources */,
 				EE8AE5F428A7F666008C066B /* DiscoverNavigationTab.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuizView<Question: CarouselQuestion>: View {
+struct QuizView<Question: Quizzable>: View {
     
     @Environment(\.presentationMode) var presentationMode
     @State var navigationTag: String?
@@ -63,8 +63,8 @@ struct QuizView<Question: CarouselQuestion>: View {
             ScrollView(showsIndicators: false) {
                 VStack {
                     LazyVGrid(columns: columns, alignment: .center) {
-                        ForEach(question.tilesInfo, id: \.categoryName) { tileInfo in
-                            QuestionTile(tileInfo: tileInfo)
+                        ForEach(question.optionsInfo, id: \.title) { tileInfo in
+                            OptionTile(tileInfo: tileInfo)
                         }
                     }
                     Spacer()
@@ -121,6 +121,6 @@ struct QuizView<Question: CarouselQuestion>: View {
 
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizView(isShowingSelf: .constant(true), question: PoliticalLeaningsQuestion.politician)
+        QuizView(isShowingSelf: .constant(true), question: PoliticsQuiz.politician)
     }
 }

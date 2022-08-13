@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct QuestionTile: View {
+struct OptionTile: View {
     @State var selected = false
-    let tileInfo: TileInfo
+    let tileInfo: OptionInfo
     let borderWidth: CGFloat = 4
     
     var body: some View {
@@ -17,7 +17,7 @@ struct QuestionTile: View {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(minWidth: 100)
-            .overlay(TitleOverlay(title: tileInfo.categoryName), alignment: .bottom)
+            .overlay(TitleOverlay(title: tileInfo.title), alignment: .bottom)
             .padding(borderWidth)
             .border(selected ? tileInfo.borderColor : Color.white,
                     width: selected ? borderWidth : 0)
@@ -46,7 +46,7 @@ struct QuestionTile: View {
 
 struct QuestionTile_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionTile( tileInfo: TileInfo(categoryName: "No Fossil Fuels",
+        OptionTile( tileInfo: OptionInfo(title: "No Fossil Fuels",
                                           imageName: "",
                                           borderColor: .yellow
                                          )
