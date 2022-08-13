@@ -12,7 +12,7 @@ struct MainNavigationView: View {
     var body: some View {
         
         TabView {
-            Text("Events")
+            EventsNavigationTab()
                 .tabItem {
                     Label("Events", systemImage: "list.dash")
                 }

@@ -17,6 +17,14 @@
 		EE32BFC0283330E900890B06 /* DiscoverMoviesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32BFBF283330E900890B06 /* DiscoverMoviesScrollView.swift */; };
 		EE32BFC2283330FA00890B06 /* DiscoverMagazinesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32BFC1283330FA00890B06 /* DiscoverMagazinesScrollView.swift */; };
 		EE32BFC42833331A00890B06 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32BFC32833331900890B06 /* Book.swift */; };
+		EE48C3EB28A7FDFA0077585C /* PoliticalLeaningsQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3EA28A7FDFA0077585C /* PoliticalLeaningsQuestion.swift */; };
+		EE48C3EE28A802910077585C /* Advanceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3ED28A802910077585C /* Advanceable.swift */; };
+		EE48C3F028A806EF0077585C /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3EF28A806EF0077585C /* QuizView.swift */; };
+		EE48C3F228A80E4A0077585C /* QuestionTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3F128A80E490077585C /* QuestionTile.swift */; };
+		EE48C3F428A811540077585C /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3F328A811540077585C /* SecondaryButton.swift */; };
+		EE48C3F628A812480077585C /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3F528A812480077585C /* PrimaryButton.swift */; };
+		EE48C3F828A817F50077585C /* QuizSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3F728A817F50077585C /* QuizSuccessView.swift */; };
+		EE48C3FA28A8186B0077585C /* EventsNavigationTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3F928A8186B0077585C /* EventsNavigationTab.swift */; };
 		EE59177B28349C81001457BE /* GoogleBookFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59177A28349C81001457BE /* GoogleBookFetcher.swift */; };
 		EE59177D28349F30001457BE /* GoogleBooksResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59177C28349F30001457BE /* GoogleBooksResponseModel.swift */; };
 		EE59177F2835CBA9001457BE /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59177E2835CBA9001457BE /* BooksViewModel.swift */; };
@@ -78,6 +86,14 @@
 		EE32BFBF283330E900890B06 /* DiscoverMoviesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMoviesScrollView.swift; sourceTree = "<group>"; };
 		EE32BFC1283330FA00890B06 /* DiscoverMagazinesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMagazinesScrollView.swift; sourceTree = "<group>"; };
 		EE32BFC32833331900890B06 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		EE48C3EA28A7FDFA0077585C /* PoliticalLeaningsQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticalLeaningsQuestion.swift; sourceTree = "<group>"; };
+		EE48C3ED28A802910077585C /* Advanceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advanceable.swift; sourceTree = "<group>"; };
+		EE48C3EF28A806EF0077585C /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		EE48C3F128A80E490077585C /* QuestionTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTile.swift; sourceTree = "<group>"; };
+		EE48C3F328A811540077585C /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		EE48C3F528A812480077585C /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		EE48C3F728A817F50077585C /* QuizSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSuccessView.swift; sourceTree = "<group>"; };
+		EE48C3F928A8186B0077585C /* EventsNavigationTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsNavigationTab.swift; sourceTree = "<group>"; };
 		EE59177A28349C81001457BE /* GoogleBookFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookFetcher.swift; sourceTree = "<group>"; };
 		EE59177C28349F30001457BE /* GoogleBooksResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksResponseModel.swift; sourceTree = "<group>"; };
 		EE59177E2835CBA9001457BE /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
@@ -204,6 +220,26 @@
 			path = Songs;
 			sourceTree = "<group>";
 		};
+		EE48C3E928A7FD350077585C /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				EE48C3EA28A7FDFA0077585C /* PoliticalLeaningsQuestion.swift */,
+				EE48C3EF28A806EF0077585C /* QuizView.swift */,
+				EE48C3F128A80E490077585C /* QuestionTile.swift */,
+				EE48C3F728A817F50077585C /* QuizSuccessView.swift */,
+				EE48C3F928A8186B0077585C /* EventsNavigationTab.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		EE48C3EC28A802740077585C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EE48C3ED28A802910077585C /* Advanceable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		EE5917802835CBBB001457BE /* View Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				EE5917822835D7A6001457BE /* AsyncImageView.swift */,
+				EE48C3F328A811540077585C /* SecondaryButton.swift */,
+				EE48C3F528A812480077585C /* PrimaryButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -391,10 +429,12 @@
 				EEB645092810FE0500837737 /* WorkNewsApp.swift */,
 				EEB6450B2810FE0500837737 /* ContentView.swift */,
 				EE5917862835F8A9001457BE /* MainNavigationView.swift */,
+				EE48C3E928A7FD350077585C /* Events */,
 				EE32BFB528332FBF00890B06 /* Discover */,
 				EE5917812835D787001457BE /* Views */,
 				EEB37491283347FA006A5F9A /* ViewModifiers */,
 				EEB374942833483B006A5F9A /* Extensions */,
+				EE48C3EC28A802740077585C /* Protocols */,
 				EEB645122810FE1500837737 /* Info.plist */,
 				EEB6450D2810FE1500837737 /* Assets.xcassets */,
 				EEB6450F2810FE1500837737 /* Preview Content */,
@@ -499,9 +539,11 @@
 			files = (
 				EED27DF1283C609D000FFB9E /* BookDescriptionView.swift in Sources */,
 				EED27DEF283C5D8E000FFB9E /* BookTitleView.swift in Sources */,
+				EE48C3FA28A8186B0077585C /* EventsNavigationTab.swift in Sources */,
 				EED27DE12839B3B4000FFB9E /* BookDetailView.swift in Sources */,
 				EE87BAF52867905E00C4B09B /* DiscoverSongsSectionHeaderView.swift in Sources */,
 				EE32BFC42833331A00890B06 /* Book.swift in Sources */,
+				EE48C3F828A817F50077585C /* QuizSuccessView.swift in Sources */,
 				EE5917872835F8A9001457BE /* MainNavigationView.swift in Sources */,
 				EE87BAE62860EF3F00C4B09B /* SpotifyAuthenticationResponseModel.swift in Sources */,
 				EEB6450C2810FE0500837737 /* ContentView.swift in Sources */,
@@ -515,9 +557,11 @@
 				EEB3748128333928006A5F9A /* Song.swift in Sources */,
 				EEB3748A28334343006A5F9A /* MovieCard.swift in Sources */,
 				EE59178B28370923001457BE /* DiscoverSectionHeaderView.swift in Sources */,
+				EE48C3F428A811540077585C /* SecondaryButton.swift in Sources */,
 				EE32BFBE283330C100890B06 /* DiscoverSongsScrollView.swift in Sources */,
 				EE323E0E2867E99400152C97 /* MoviesListView.swift in Sources */,
 				EEB374962833489E006A5F9A /* LinearGradientExtensions.swift in Sources */,
+				EE48C3F228A80E4A0077585C /* QuestionTile.swift in Sources */,
 				EE591789283702F9001457BE /* BooksListView.swift in Sources */,
 				EE59179028372DAC001457BE /* ViewExtensions.swift in Sources */,
 				EE87BAF92867C91800C4B09B /* TMDBApi.swift in Sources */,
@@ -543,11 +587,15 @@
 				EE32BFB428332F8E00890B06 /* DiscoverView.swift in Sources */,
 				EED27DF3284A9D65000FFB9E /* BookConstants.swift in Sources */,
 				EE32BFBC283330A500890B06 /* DiscoverBooksScrollView.swift in Sources */,
+				EE48C3EE28A802910077585C /* Advanceable.swift in Sources */,
 				EE87BAFB2867CEE100C4B09B /* MediaItemFetcher.swift in Sources */,
 				EEB374842833394E006A5F9A /* Magazine.swift in Sources */,
 				EE87BB032867E49200C4B09B /* TMDBMovieListResponseModel.swift in Sources */,
 				EE32BFC0283330E900890B06 /* DiscoverMoviesScrollView.swift in Sources */,
+				EE48C3F628A812480077585C /* PrimaryButton.swift in Sources */,
+				EE48C3EB28A7FDFA0077585C /* PoliticalLeaningsQuestion.swift in Sources */,
 				EE59177B28349C81001457BE /* GoogleBookFetcher.swift in Sources */,
+				EE48C3F028A806EF0077585C /* QuizView.swift in Sources */,
 				EE8AE5F428A7F666008C066B /* DiscoverNavigationTab.swift in Sources */,
 				EE5917832835D7A6001457BE /* AsyncImageView.swift in Sources */,
 			);

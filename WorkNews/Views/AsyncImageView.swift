@@ -75,6 +75,8 @@ struct AsyncImageView: View {
     }
 }
 
+// MARK: - Preview
+
 struct AsyncImageView_Previews: PreviewProvider {
     static var previews: some View {
         AsyncImageView(link: nil, style: .bookCard, tryAgain: false)
