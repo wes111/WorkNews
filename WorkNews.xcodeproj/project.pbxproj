@@ -45,6 +45,10 @@
 		EE7E818E28A85920008D206C /* NextFocusField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E818D28A85920008D206C /* NextFocusField.swift */; };
 		EE7E819028A85F4C008D206C /* MenuField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E818F28A85F4C008D206C /* MenuField.swift */; };
 		EE7E819428A8663A008D206C /* USState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E819328A8663A008D206C /* USState.swift */; };
+		EE7E819628A9C9AA008D206C /* DateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E819528A9C9AA008D206C /* DateField.swift */; };
+		EE7E819828A9CC10008D206C /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E819728A9CC10008D206C /* DatePickerView.swift */; };
+		EE7E819A28A9CCB6008D206C /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E819928A9CCB6008D206C /* DateExtensions.swift */; };
+		EE7E819C28A9D50A008D206C /* CheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E819B28A9D50A008D206C /* CheckBoxStyle.swift */; };
 		EE81CB342839782D00EF2BAF /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE81CB332839782D00EF2BAF /* IntExtensions.swift */; };
 		EE87BAE32860ECCD00C4B09B /* SpotifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87BAE22860ECCD00C4B09B /* SpotifyAPI.swift */; };
 		EE87BAE62860EF3F00C4B09B /* SpotifyAuthenticationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE87BAE52860EF3F00C4B09B /* SpotifyAuthenticationResponseModel.swift */; };
@@ -124,6 +128,10 @@
 		EE7E818D28A85920008D206C /* NextFocusField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextFocusField.swift; sourceTree = "<group>"; };
 		EE7E818F28A85F4C008D206C /* MenuField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuField.swift; sourceTree = "<group>"; };
 		EE7E819328A8663A008D206C /* USState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USState.swift; sourceTree = "<group>"; };
+		EE7E819528A9C9AA008D206C /* DateField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateField.swift; sourceTree = "<group>"; };
+		EE7E819728A9CC10008D206C /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		EE7E819928A9CCB6008D206C /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		EE7E819B28A9D50A008D206C /* CheckBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxStyle.swift; sourceTree = "<group>"; };
 		EE81CB332839782D00EF2BAF /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		EE87BAE22860ECCD00C4B09B /* SpotifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPI.swift; sourceTree = "<group>"; };
 		EE87BAE52860EF3F00C4B09B /* SpotifyAuthenticationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuthenticationResponseModel.swift; sourceTree = "<group>"; };
@@ -268,6 +276,7 @@
 		EE5917812835D787001457BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EE7E819D28A9D50F008D206C /* Toggle Styles */,
 				EE7E818828A851BE008D206C /* User Fields */,
 				EE5917822835D7A6001457BE /* AsyncImageView.swift */,
 				EE48C3F328A811540077585C /* SecondaryButton.swift */,
@@ -339,6 +348,8 @@
 				EE7E818B28A85722008D206C /* UserFieldHeaders.swift */,
 				EE7E818D28A85920008D206C /* NextFocusField.swift */,
 				EE7E818F28A85F4C008D206C /* MenuField.swift */,
+				EE7E819528A9C9AA008D206C /* DateField.swift */,
+				EE7E819728A9CC10008D206C /* DatePickerView.swift */,
 			);
 			path = "User Fields";
 			sourceTree = "<group>";
@@ -361,6 +372,14 @@
 				EEB37491283347FA006A5F9A /* ViewModifiers */,
 			);
 			path = Reusable;
+			sourceTree = "<group>";
+		};
+		EE7E819D28A9D50F008D206C /* Toggle Styles */ = {
+			isa = PBXGroup;
+			children = (
+				EE7E819B28A9D50A008D206C /* CheckBoxStyle.swift */,
+			);
+			path = "Toggle Styles";
 			sourceTree = "<group>";
 		};
 		EE87BAE42860EF1B00C4B09B /* Spotify Response Models */ = {
@@ -498,6 +517,7 @@
 				EE59178F28372DAC001457BE /* ViewExtensions.swift */,
 				EE81CB332839782D00EF2BAF /* IntExtensions.swift */,
 				EED27DEB283AE419000FFB9E /* StringExtensions.swift */,
+				EE7E819928A9CCB6008D206C /* DateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -633,12 +653,14 @@
 			files = (
 				EED27DF1283C609D000FFB9E /* BookDescriptionView.swift in Sources */,
 				EED27DEF283C5D8E000FFB9E /* BookTitleView.swift in Sources */,
+				EE7E819828A9CC10008D206C /* DatePickerView.swift in Sources */,
 				EE48C3FA28A8186B0077585C /* EventsNavigationTab.swift in Sources */,
 				EED27DE12839B3B4000FFB9E /* BookDetailView.swift in Sources */,
 				EE87BAF52867905E00C4B09B /* DiscoverSongsSectionHeaderView.swift in Sources */,
 				EE7E818528A84C1B008D206C /* AddEventView.swift in Sources */,
 				EE7E818E28A85920008D206C /* NextFocusField.swift in Sources */,
 				EE32BFC42833331A00890B06 /* Book.swift in Sources */,
+				EE7E819A28A9CCB6008D206C /* DateExtensions.swift in Sources */,
 				EE7E817F28A84766008D206C /* OptionInfo.swift in Sources */,
 				EE7E818C28A85722008D206C /* UserFieldHeaders.swift in Sources */,
 				EE48C3F828A817F50077585C /* QuizSuccessView.swift in Sources */,
@@ -689,8 +711,10 @@
 				EE32BFB428332F8E00890B06 /* DiscoverView.swift in Sources */,
 				EED27DF3284A9D65000FFB9E /* BookConstants.swift in Sources */,
 				EE32BFBC283330A500890B06 /* DiscoverBooksScrollView.swift in Sources */,
+				EE7E819C28A9D50A008D206C /* CheckBoxStyle.swift in Sources */,
 				EE48C3EE28A802910077585C /* Advanceable.swift in Sources */,
 				EE7E819028A85F4C008D206C /* MenuField.swift in Sources */,
+				EE7E819628A9C9AA008D206C /* DateField.swift in Sources */,
 				EE7E819428A8663A008D206C /* USState.swift in Sources */,
 				EE87BAFB2867CEE100C4B09B /* MediaItemFetcher.swift in Sources */,
 				EEB374842833394E006A5F9A /* Magazine.swift in Sources */,

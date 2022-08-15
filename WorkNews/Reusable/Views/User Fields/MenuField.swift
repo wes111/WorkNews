@@ -16,7 +16,8 @@ struct MenuField<T: UserFillable>: View {
     let menuItemWidth: CGFloat
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading) {
+            
             UserFieldHeaders(title: field.title, subtitle: field.subtitle)
             
             VStack {

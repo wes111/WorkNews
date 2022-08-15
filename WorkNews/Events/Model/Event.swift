@@ -19,7 +19,15 @@ enum EventField: String, UserFillable {
     case title = "Event Title"
     case city = "City"
     case state = "State"
-    case info = "For More Information"
+    case description = "Description"
+    case beginDate = "Beginning Date"
+    case endDate = "Ending Date"
+    case streetAddress = "Street Address"
+    case unitAddress = "Apt or Unit"
+    case zipcode = "Zip code"
+    case organizer = "Organizer"
+    case contactEmail = "Contact Email"
+    case details = "Additional Details"
     
     var title: String {
         return self.rawValue

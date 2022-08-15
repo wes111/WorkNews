@@ -7,13 +7,13 @@
 
 import SwiftUI
 
+enum EventsTab {
+    case inPerson
+    case online
+    case all
+}
+
 struct EventsNavigationTab: View {
-    
-    private enum EventsTab {
-        case inPerson
-        case online
-        case all
-    }
     
     @State var isShowingDetailView = false
     @State var isShowingAddEventView = false
