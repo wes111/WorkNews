@@ -22,7 +22,7 @@ struct UserTextField<T: UserFillable>: View {
                 .padding(16)
                 .overlay(
                     RoundedRectangle(cornerRadius: 2)
-                        .stroke(field.validate(userText) ? Color.black : Color.red)
+                        .stroke(field.validate(userText) ? Color.softYellow : Color.red)
                 )
                 .onChange(of: userText) { newValue in
                     self.userText = field.format(newValue)

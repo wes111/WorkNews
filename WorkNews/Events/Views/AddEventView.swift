@@ -62,8 +62,6 @@ struct AddEventView: View {
                             Spacer()
                         }
                         
-                    
-                        
                         // If in-person, show address fields.
                         if isInPerson {
                             
@@ -74,7 +72,6 @@ struct AddEventView: View {
                                 NextFocusField(EventField.unitAddress, userText: $userText, _focusedField)
                                 
                                 NextFocusField(EventField.city, userText: $userText, _focusedField)
-                                
                             }
                             
                             HStack(alignment: .top, spacing: 10) {
@@ -87,7 +84,6 @@ struct AddEventView: View {
                             }
                         }
                         
-                        
                         DateField(EventField.beginDate, userDate: $userDate)
                         
                         DateField(EventField.endDate, userDate: $userDate)
@@ -97,12 +93,14 @@ struct AddEventView: View {
                         NextFocusField(EventField.details, userText: $userText, _focusedField)
                         
                         NextFocusField(EventField.contactEmail, userText: $userText, _focusedField)
-                        
                     }
                 }
                 .padding()
             }
         }
+        .background(Color.deepRed)
+        .foregroundColor(.white)
+        .font(.create(Gotham.black(size: 12)))
     }
 }
 

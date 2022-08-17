@@ -37,6 +37,18 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Gotham-Black.otf</string>
+		<string>Gotham-Bold.otf</string>
+		<string>Gotham-BookItalic.otf</string>
+		<string>Gotham-Light.otf</string>
+		<string>Gotham-Thin.otf</string>
+		<string>Gotham-ThinItalic.otf</string>
+		<string>Gotham-UltraItalic.otf</string>
+		<string>Gotham-XLight.otf</string>
+		<string>Gotham-XLightItalic.otf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
