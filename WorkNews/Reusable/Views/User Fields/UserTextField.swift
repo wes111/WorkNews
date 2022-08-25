@@ -13,20 +13,24 @@ struct UserTextField<T: UserFillable>: View {
     let field: T
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
             
             UserFieldHeaders(title: field.title, subtitle: field.subtitle)
+                .padding(.bottom, 10)
             
             TextField(field.defaultText ?? "", text: $userText)
                 .keyboardType(field.keyboardType)
-                .padding(16)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 2)
-                        .stroke(field.validate(userText) ? Color.softYellow : Color.red)
-                )
                 .onChange(of: userText) { newValue in
                     self.userText = field.format(newValue)
                 }
+                .modifier(TextFieldClearButton(text: $userText))
+                .font(.create(Gotham.light(size: 14)))
+                .padding(.bottom, 2)
+                .frame(height: 20)
+            
+            Divider()
+                .frame(height: 1)
+                .overlay(Color.softYellow)
         }
     }
 }

@@ -13,11 +13,13 @@ struct UserFieldHeaders: View {
     let subtitle: String?
     
     var body: some View {
-        Text(title)
-            .padding(.bottom, subtitle == nil ? -2 : -8)
-        
-        if let subtitle = subtitle {
-            Text(subtitle)
+        VStack {
+            Text(title)
+                .font(.create(Gotham.xLight(size: 16)))
+            
+            if let subtitle = subtitle {
+                Text(subtitle)
+            }
         }
     }
 }

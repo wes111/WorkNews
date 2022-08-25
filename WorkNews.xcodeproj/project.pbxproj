@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE02B7B928B7096800507B2C /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE02B7B828B7096800507B2C /* TextFieldClearButton.swift */; };
 		EE323E0A2867E61F00152C97 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE323E092867E61F00152C97 /* MovieDetailView.swift */; };
 		EE323E0C2867E92C00152C97 /* DiscoverMoviesSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE323E0B2867E92C00152C97 /* DiscoverMoviesSectionHeaderView.swift */; };
 		EE323E0E2867E99400152C97 /* MoviesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE323E0D2867E99400152C97 /* MoviesListView.swift */; };
@@ -35,7 +36,6 @@
 		EE59178B28370923001457BE /* DiscoverSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59178A28370923001457BE /* DiscoverSectionHeaderView.swift */; };
 		EE59178E2837150B001457BE /* GoogleBookShelfResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59178D2837150B001457BE /* GoogleBookShelfResponseModel.swift */; };
 		EE59179028372DAC001457BE /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59178F28372DAC001457BE /* ViewExtensions.swift */; };
-		EE6D42D828AC786E007C2235 /* Views in Resources */ = {isa = PBXBuildFile; fileRef = EE6D42D728AC786E007C2235 /* Views */; };
 		EE6D42F528AC8048007C2235 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE6D42EC28AC8047007C2235 /* Gotham-Bold.otf */; };
 		EE6D42F628AC8048007C2235 /* Gotham-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE6D42ED28AC8047007C2235 /* Gotham-Thin.otf */; };
 		EE6D42F728AC8048007C2235 /* Gotham-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE6D42EE28AC8047007C2235 /* Gotham-BookItalic.otf */; };
@@ -47,6 +47,7 @@
 		EE6D42FD28AC8048007C2235 /* Gotham-UltraItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE6D42F428AC8048007C2235 /* Gotham-UltraItalic.otf */; };
 		EE6D430B28AC846C007C2235 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6D430A28AC846C007C2235 /* FontExtensions.swift */; };
 		EE6D430D28AC8A5D007C2235 /* Gotham.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6D430C28AC8A5D007C2235 /* Gotham.swift */; };
+		EE75C77928B71AFE00D83FBE /* UIScreenExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE75C77828B71AFE00D83FBE /* UIScreenExtensions.swift */; };
 		EE7E817C28A84655008D206C /* Quizzable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E817B28A84655008D206C /* Quizzable.swift */; };
 		EE7E817F28A84766008D206C /* OptionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E817E28A84766008D206C /* OptionInfo.swift */; };
 		EE7E818228A84BDD008D206C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E818128A84BDD008D206C /* Event.swift */; };
@@ -103,6 +104,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE02B7B828B7096800507B2C /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
 		EE323E092867E61F00152C97 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		EE323E0B2867E92C00152C97 /* DiscoverMoviesSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMoviesSectionHeaderView.swift; sourceTree = "<group>"; };
 		EE323E0D2867E99400152C97 /* MoviesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListView.swift; sourceTree = "<group>"; };
@@ -131,7 +133,6 @@
 		EE59178A28370923001457BE /* DiscoverSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverSectionHeaderView.swift; sourceTree = "<group>"; };
 		EE59178D2837150B001457BE /* GoogleBookShelfResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookShelfResponseModel.swift; sourceTree = "<group>"; };
 		EE59178F28372DAC001457BE /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
-		EE6D42D728AC786E007C2235 /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Views; sourceTree = "<group>"; };
 		EE6D42EC28AC8047007C2235 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
 		EE6D42ED28AC8047007C2235 /* Gotham-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Thin.otf"; sourceTree = "<group>"; };
 		EE6D42EE28AC8047007C2235 /* Gotham-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BookItalic.otf"; sourceTree = "<group>"; };
@@ -143,6 +144,7 @@
 		EE6D42F428AC8048007C2235 /* Gotham-UltraItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-UltraItalic.otf"; sourceTree = "<group>"; };
 		EE6D430A28AC846C007C2235 /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
 		EE6D430C28AC8A5D007C2235 /* Gotham.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gotham.swift; sourceTree = "<group>"; };
+		EE75C77828B71AFE00D83FBE /* UIScreenExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtensions.swift; sourceTree = "<group>"; };
 		EE7E817B28A84655008D206C /* Quizzable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quizzable.swift; sourceTree = "<group>"; };
 		EE7E817E28A84766008D206C /* OptionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionInfo.swift; sourceTree = "<group>"; };
 		EE7E818128A84BDD008D206C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -379,7 +381,6 @@
 			children = (
 				EE48C3F928A8186B0077585C /* EventsNavigationTab.swift */,
 				EE7E818428A84C1B008D206C /* AddEventView.swift */,
-				EE6D42D728AC786E007C2235 /* Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -549,6 +550,7 @@
 			isa = PBXGroup;
 			children = (
 				EEB3749228334818006A5F9A /* NeumorphicViewModifier.swift */,
+				EE02B7B828B7096800507B2C /* TextFieldClearButton.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -564,6 +566,7 @@
 				EE7E819928A9CCB6008D206C /* DateExtensions.swift */,
 				EE7E819E28A9EEE7008D206C /* ColorExtensions.swift */,
 				EE6D430A28AC846C007C2235 /* FontExtensions.swift */,
+				EE75C77828B71AFE00D83FBE /* UIScreenExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -695,7 +698,6 @@
 				EE6D42F528AC8048007C2235 /* Gotham-Bold.otf in Resources */,
 				EE6D42F628AC8048007C2235 /* Gotham-Thin.otf in Resources */,
 				EE6D42FC28AC8048007C2235 /* Gotham-Light.otf in Resources */,
-				EE6D42D828AC786E007C2235 /* Views in Resources */,
 				EEB645112810FE1500837737 /* Preview Assets.xcassets in Resources */,
 				EEB6450E2810FE1500837737 /* Assets.xcassets in Resources */,
 			);
@@ -725,6 +727,7 @@
 				EE87BAE62860EF3F00C4B09B /* SpotifyAuthenticationResponseModel.swift in Sources */,
 				EEB6450C2810FE0500837737 /* ContentView.swift in Sources */,
 				EE323E102867EBC900152C97 /* MovieConstants.swift in Sources */,
+				EE75C77928B71AFE00D83FBE /* UIScreenExtensions.swift in Sources */,
 				EE7E817C28A84655008D206C /* Quizzable.swift in Sources */,
 				EE59177D28349F30001457BE /* GoogleBooksResponseModel.swift in Sources */,
 				EE7E819F28A9EEE7008D206C /* ColorExtensions.swift in Sources */,
@@ -740,6 +743,7 @@
 				EE32BFBE283330C100890B06 /* DiscoverSongsScrollView.swift in Sources */,
 				EE323E0E2867E99400152C97 /* MoviesListView.swift in Sources */,
 				EE7E818728A851B9008D206C /* UserTextField.swift in Sources */,
+				EE02B7B928B7096800507B2C /* TextFieldClearButton.swift in Sources */,
 				EEB374962833489E006A5F9A /* LinearGradientExtensions.swift in Sources */,
 				EE48C3F228A80E4A0077585C /* OptionTile.swift in Sources */,
 				EE591789283702F9001457BE /* BooksListView.swift in Sources */,

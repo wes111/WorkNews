@@ -14,6 +14,7 @@ struct AddEventView: View {
     @State var userDate = Date()
     @State var isInPerson = false
     @State var isVirtual = false
+    let stateFieldWidth = (UIScreen.width * 0.55)
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -38,9 +39,10 @@ struct AddEventView: View {
             VStack {
                 
                 Text("Create Event")
+                    .font(.create(Gotham.bold(size: 28)))
                 
                 ScrollView {
-                    VStack(spacing: 20) {
+                    VStack(spacing: 30) {
                         
                         NextFocusField(EventField.title, userText: $userText, _focusedField)
                         
@@ -67,20 +69,21 @@ struct AddEventView: View {
                             
                             NextFocusField(EventField.streetAddress, userText: $userText, _focusedField)
                             
-                            HStack(alignment: .top, spacing: 10) {
+                            HStack(alignment: .top, spacing: 25) {
                                 
                                 NextFocusField(EventField.unitAddress, userText: $userText, _focusedField)
                                 
                                 NextFocusField(EventField.city, userText: $userText, _focusedField)
                             }
                             
-                            HStack(alignment: .top, spacing: 10) {
+                            HStack(alignment: .top, spacing: 25) {
                                 
                                 NextFocusField(EventField.zipcode, userText: $userText, _focusedField)
                                 
                                 MenuField(field: EventField.state,
                                           menuItems: USState.allCases.map { $0.name },
-                                          menuItemWidth: 200)
+                                          menuItemWidth: stateFieldWidth)
+                                .frame(width: stateFieldWidth)
                             }
                         }
                         
@@ -100,7 +103,7 @@ struct AddEventView: View {
         }
         .background(Color.deepRed)
         .foregroundColor(.white)
-        .font(.create(Gotham.black(size: 12)))
+        .font(.create(Gotham.light(size: 12)))
     }
 }
 
